@@ -1,0 +1,370 @@
+﻿/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Layout */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: #d32f2f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the image and text */
+    padding: 10px 20px; /* Ensures proper spacing */
+    justify-content: flex-start; /* Aligns content to the left */
+    width: 100%;
+}
+
+    /* Profile Image */
+    .profile img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid white;
+        cursor: pointer;
+    }
+
+/* Profile Info */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns text to the left */
+    gap: 1px; /* Spacing between name and other elements */
+}
+
+    /* Name Styling */
+    .profile-info h3 {
+        font-size: 14px;
+        margin: -1;
+        color: white;
+        white-space: nowrap;
+    }
+
+/* Fixes alignment for "Menu" text */
+.menu-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 15px 0 5px 20px; /* Aligns to the left */
+}
+
+.profile button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+    .profile button:hover {
+        background-color: #2980b9;
+    }
+
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+    padding: 10px 0;
+}
+
+    .sidebar ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+        .sidebar ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+            .sidebar ul li a i {
+                margin-right: 12px;
+                font-size: 18px;
+            }
+
+            /* Hover & Active Effects */
+            .sidebar ul li a:hover, .sidebar ul li .active {
+                background: white;
+                color: #d32f2f;
+                font-weight: 600;
+            }
+
+/* Logout Button - Fixed at the Bottom */
+.logout {
+    display: flex;
+    width: 100%;
+    background: #d32f2f;
+    color: white;
+    text-align: left;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 20px;
+    text-decoration: none;
+    gap: 10px;
+}
+
+    .logout:hover {
+        background: white;
+        color: #d32f2f;
+        font-weight: 600;
+    }
+
+
+
+.modal {
+    display: none; /* ✅ Ensures modal is hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+    .modal-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* spacing between the file input and the button */
+        width: 100%;
+    }
+
+
+    .modal-content form input[type="file"] {
+        width: 100%;
+        margin: 15px 0;
+        padding: 8px;
+        margin-top: 50px;
+    }
+
+    .modal-content form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #d32f2f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: -20px;
+    }
+
+        .modal-content form button:hover {
+            background-color: #b71c1c;
+        }
+
+
+.logout-btn, .cancel-btn {
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 48%;
+    transition: 0.2s ease;
+    margin-top: 10px;
+}
+
+.logout-btn {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: black;
+}
+
+.logout-btn:hover {
+    background-color: #b71c1c;
+}
+
+.cancel-btn:hover {
+    background-color: #aaa;
+}
+
+/* Main content container */
+.main-content {
+    max-width: 75%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 35px;
+}
+
+/* Heading */
+h1 {
+    text-align: left;
+    color: #333;
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    justify-content: flex-end; /* Pushes it to the right */
+    align-items: center;
+    gap: 10px; /* Adds spacing between label and dropdown */
+    margin-bottom: 20px; /* Adds spacing below */
+    margin-top: -45px; /* Moves the filter up */
+    position: relative; /* Ensures proper positioning */
+    z-index: 10; /* Prevents overlap issues */
+}
+
+/* Style the dropdown */
+#yearFilter {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+    min-width: 90px; /* Ensures consistent width */
+}
+
+    /* Add focus effect */
+    #yearFilter:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    }
+
+    /* Add hover effect */
+    #yearFilter:hover {
+        border-color: #0056b3;
+    }
+
+/* Style the Role (Alumni/Student) dropdown */
+#roleFilter {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+    min-width: 0px; /* Ensures consistent width */
+}
+
+    /* Add focus effect */
+    #roleFilter:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    }
+
+    /* Add hover effect */
+    #roleFilter:hover {
+        border-color: #0056b3;
+    }
+
+
+/* Table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+    .table th, .table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+/* Header styling */
+.thead-dark th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Alternating row colors */
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect */
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Center align last column */
+.table td:last-child {
+    text-align: center;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .table th, .table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+}

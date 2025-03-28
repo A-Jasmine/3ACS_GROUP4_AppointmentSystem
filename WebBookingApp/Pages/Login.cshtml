@@ -1,0 +1,54 @@
+﻿@page
+@model WebBookingApp.Pages.LoginModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="post">
+            <!-- Change input type from 'email' to 'text' -->
+            <input type="text" name="Email" placeholder="Email" required>
+
+            <div class="password-container">
+                <input type="password" id="password" name="Password" placeholder="Password" required>
+                <span id="togglePassword" class="toggle-icon">
+                    <i id="eyeIcon" class="fas fa-eye"></i>
+                </span>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Not registered yet? <a href="/studentRegistration">Create an account</a></p>
+    </div>
+
+    <script>
+        const passwordField = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+        const eyeIcon = document.getElementById("eyeIcon");
+
+        togglePassword.addEventListener("click", function () {
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        });
+    </script>
+
+
+</body>
+</html>

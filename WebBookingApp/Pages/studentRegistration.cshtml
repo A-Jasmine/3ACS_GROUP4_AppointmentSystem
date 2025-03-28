@@ -1,0 +1,132 @@
+﻿@page
+@model WebBookingApp.Pages.studentRegistrationModel
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="/css/studentRegistration.css" />
+<script src="~/js/dashboardAdmin.js"></script>
+<script src="/_framework/aspnetcore-browser-refresh.js"></script>
+<script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+
+<a href="/Login" class="back-to-login" style="color: red;">
+    <i class="fas fa-home"></i>
+</a>
+
+<div class="login-container">
+    <h2>Register Now!</h2>
+    
+    <form method="post" enctype="multipart/form-data"> <!-- Add enctype for file upload -->
+        <div class="form-grid">
+            <div class="form-group">
+                <label asp-for="Input.FirstName">First Name</label>
+                <input asp-for="Input.FirstName" placeholder="First Name" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.MiddleName">Middle Name</label>
+                <input asp-for="Input.MiddleName" placeholder="Middle Name" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.LastName">Last Name</label>
+                <input asp-for="Input.LastName" placeholder="Last Name" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Email">Email Address</label>
+                <input asp-for="Input.Email" placeholder="Email Address" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.StudentId">Student ID</label>
+                <input asp-for="Input.StudentId" placeholder="Student ID (e.g., 22-00XXXX)" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Department">Department</label>
+                <select asp-for="Input.Department" required>
+                    <option value="">Select Department</option>
+                    <option value="CS">Computer Science</option>
+                    <option value="IS">Information System</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="yearLevelField">
+                <label asp-for="Input.YearLevel">Year Level</label>
+                <select asp-for="Input.YearLevel">
+                    <option value="">Select Year Level</option>
+                    <option value="1st Year">1st Year</option>
+                    <option value="2nd Year">2nd Year</option>
+                    <option value="3rd Year">3rd Year</option>
+                    <option value="4th Year">4th Year</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.MobileNumber">Mobile Number</label>
+                <input asp-for="Input.MobileNumber" placeholder="Mobile Number" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Password">Password</label>
+                <input asp-for="Input.Password" type="password" placeholder="Password" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <input asp-for="Input.ConfirmPassword" type="password" placeholder="Confirm Password" required />
+            </div>
+
+            <div class="form-group full-width">
+                <label asp-for="Input.Role">Role</label>
+                <select asp-for="Input.Role" id="roleSelect" required>
+                    <option value="" disabled selected hidden>Select Role</option>
+                    <option value="Student">Student</option>
+                    <option value="Alumni">Alumni</option>
+                </select>
+            </div>
+
+            <!-- Upload Picture Field -->
+            <div class="form-group full-width">
+                <label for="idPicture">Upload Student/Alumni ID</label>
+                <input type="file" id="idPicture" name="idPicture" accept="image/*" required onchange="previewImage(event)" />
+                <img id="idPicturePreview" src="#" alt="ID Preview" style="display: none; width: 200px; height: auto; margin-top: 10px;" />
+            </div>
+        </div>
+
+        <button type="submit" class="register-btn">Submit</button>
+    </form>
+
+    <!-- Modal to display success message -->
+    <div id="successModal" class="modal" style="display: @(ViewData["ShowSuccessModal"] != null ? "flex" : "none")">
+        <div class="modal-content">
+            <p>Your registration has been submitted for review.</p>
+            <p>Please wait for approval from the administration.</p>
+            <button onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var preview = document.getElementById("idPicturePreview");
+                preview.src = reader.result;
+                preview.style.display = "block";
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function redirectToLogin() {
+            window.location.href = "/Login";
+        }
+
+        document.getElementById("roleSelect").addEventListener("change", function () {
+            var yearLevelField = document.getElementById("yearLevelField");
+            yearLevelField.style.display = (this.value === "Alumni") ? "none" : "block";
+        });
+
+        document.getElementById("roleSelect").dispatchEvent(new Event("change"));
+    </script>
+</div>

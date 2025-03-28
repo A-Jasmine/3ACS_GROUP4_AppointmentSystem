@@ -1,0 +1,147 @@
+﻿@page
+@model WebBookingApp.Pages.dashboardStudentModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="~/css/dashboardStudent.css">
+    <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="profile">
+            <img id="profileImage"
+                 src="/dashboardStudent?handler=ProfilePicture&t=@DateTime.Now.Ticks"
+                 alt="Profile Picture"
+                 onclick="openUploadModal()">
+            <div class="profile-info">
+                <h3>@Model.FirstName @Model.LastName</h3>
+              
+            </div>
+        </div>
+
+        <ul>
+
+            <!-- ✅ Added "Menu" Text -->
+            <p class="menu-text">Menu</p>
+
+            <li><a asp-page="/dashboardStudent"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a asp-page="/BookedAppointments"><i class="fas fa-calendar-check"></i> Booked Appointments</a></li>
+            <li><a asp-page="/makeAppointment"><i class="fas fa-plus-circle"></i> Make Appointment</a></li>
+        </ul>
+
+        <a href="#" class="logout" onclick="showLogoutModal()">
+            <i class="fas fa-sign-out-alt"></i> Log out
+        </a>
+    </div>
+
+    <div class="main-content">
+        <h1>Welcome!</h1>
+
+        <div class="profile-banner">
+            @if (Model.ProfilePicture != null)
+            {
+                <img src="@Url.Page("/dashboardStudent", "ProfilePicture")" alt="Profile Picture" />
+            }
+            else
+            {
+                <img src="/images/image.png" alt="Default Profile" />
+            }
+            <div class="student-name">
+                <h2>@Model.FirstName @Model.LastName</h2>
+            </div>
+        </div>
+
+   
+
+        <div class="appointments-container">
+            <h4>Appointment History</h4>
+            <table class="appointments-table">
+                <thead>
+                    <tr>
+                        <th>Professor</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Purpose</th>
+                        <th>Mode</th>
+                        <th>Additional Notes</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Appointments.Any())
+                    {
+                        foreach (var appointment in Model.Appointments)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="professor-container">
+                                        <img src="@appointment.ProfessorProfilePicture"
+                                             alt="Professor Profile"
+                                             class="professor-profile-img">
+                                        <span>@appointment.ProfessorName</span>
+                                    </div>
+                                </td>
+
+                                <td>@appointment.AppointmentDate.ToString("yyyy-MM-dd")</td>
+                                <td>@appointment.FormattedAppointmentTime</td>
+                                <td>@appointment.Purpose</td>
+                                <td>@appointment.Mode</td> <!-- ✅ Show Mode -->
+                                <td>@appointment.AdditionalNotes</td> <!-- ✅ Show Additional Notes -->
+                                <td class="status @appointment.Status">@appointment.Status</td>
+
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5">No appointments found.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div> <!-- ✅ Closing main-content -->
+
+
+
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Upload Profile Picture</h2>
+            <form id="uploadForm" method="post" enctype="multipart/form-data" asp-page-handler="UploadPicture">
+                <input type="file" name="UploadedFile" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+
+            <p id="uploadMessage"></p>
+        </div>
+    </div>
+
+
+
+    <!-- ✅ Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to log out?</p>
+            <div class="modal-buttons">
+                <button class="logout-btn" onclick="confirmLogout()">Yes</button>
+                <button class="cancel-btn" onclick="hideLogoutModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Hidden Logout Form -->
+    <form id="logoutForm" method="post" asp-page-handler="Logout"></form>
+
+    <script src="~/js/dashboardStudent.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿@page
+@model WebBookingApp.Pages.dashboardProfessorModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Dashboard</title>
+    <link rel="stylesheet" href="~/css/dashboardProfessor.css" asp-append-version="true" />
+    <script src="~/js/dashboardProfessor.js"></script>
+    <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <img id="profileImage" src="/dashboardProfessor?handler=ProfilePicture&t=@DateTime.UtcNow.Ticks"
+                 alt="Profile Picture" width="50" height="100" onclick="openUploadModal()">
+
+            <h2>@Model.FirstName @Model.LastName</h2>
+        </div>
+
+        <ul>
+            <!-- ✅ Added "Menu" Text -->
+            <p class="menu-text">Menu</p>
+
+            <li><a asp-page="/dashboardProfessor"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a asp-page="/manageAppointment"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
+            <li><a asp-page=""><i class="fas fa-list-alt"></i> Appointment Lists</a></li>
+            <li><a asp-page="/setAvailability"><i class="fas fa-clock"></i> Set Availability</a></li>
+        </ul>
+
+
+        <a href="#" class="logout" onclick="showLogoutModal()">
+            <i class="fas fa-sign-out-alt"></i> Log out
+        </a>
+    </div>
+
+    <div class="main-content">
+        <h1>Welcome to the Professor Dashboard</h1>
+    </div>
+
+
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Upload Profile Picture</h2>
+            <form id="uploadForm" method="post" enctype="multipart/form-data" asp-page-handler="UploadPicture">
+                <input type="file" name="UploadedFile" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+
+
+
+            <p id="uploadMessage"></p>
+        </div>
+    </div>
+
+
+
+    <!-- ✅ Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to log out?</p>
+            <div class="modal-buttons">
+                <button class="logout-btn" onclick="confirmLogout()">Yes</button>
+                <button class="cancel-btn" onclick="hideLogoutModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Hidden Logout Form -->
+    <form id="logoutForm" method="post" asp-page-handler="Logout"></form>
+
+    
+</body>
+</html>

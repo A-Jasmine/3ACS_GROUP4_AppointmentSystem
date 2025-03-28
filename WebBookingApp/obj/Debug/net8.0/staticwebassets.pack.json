@@ -1,0 +1,345 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebBookingApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\WebBookingApp.r2qxbf7sht.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\BookedAppointments.css",
+      "PackagePath": "staticwebassets\\css\\BookedAppointments.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\dashboardAdmin.css",
+      "PackagePath": "staticwebassets\\css\\dashboardAdmin.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\dashboardProfessor.css",
+      "PackagePath": "staticwebassets\\css\\dashboardProfessor.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\dashboardStudent.css",
+      "PackagePath": "staticwebassets\\css\\dashboardStudent.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\makeAppointment.css",
+      "PackagePath": "staticwebassets\\css\\makeAppointment.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageAppointment.css",
+      "PackagePath": "staticwebassets\\css\\manageAppointment.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageStudents.css",
+      "PackagePath": "staticwebassets\\css\\manageStudents.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\setAvailability.css",
+      "PackagePath": "staticwebassets\\css\\setAvailability.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\studentRegistration.css",
+      "PackagePath": "staticwebassets\\css\\studentRegistration.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\6262461230291732936.jpg",
+      "PackagePath": "staticwebassets\\images\\6262461230291732936.jpg"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\bg-1536x864.png",
+      "PackagePath": "staticwebassets\\images\\bg-1536x864.png"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\cict.jpg",
+      "PackagePath": "staticwebassets\\images\\cict.jpg"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\image.png",
+      "PackagePath": "staticwebassets\\images\\image.png"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\tcu.jpg",
+      "PackagePath": "staticwebassets\\images\\tcu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\js\\dashboardAdmin.js",
+      "PackagePath": "staticwebassets\\js\\dashboardAdmin.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\js\\dashboardProfessor.js",
+      "PackagePath": "staticwebassets\\js\\dashboardProfessor.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\js\\dashboardStudent.js",
+      "PackagePath": "staticwebassets\\js\\dashboardStudent.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\js\\manageStudents.js",
+      "PackagePath": "staticwebassets\\js\\manageStudents.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebBookingApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebBookingApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebBookingApp.props",
+      "PackagePath": "build\\WebBookingApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebBookingApp.props",
+      "PackagePath": "buildMultiTargeting\\WebBookingApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebBookingApp.props",
+      "PackagePath": "buildTransitive\\WebBookingApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

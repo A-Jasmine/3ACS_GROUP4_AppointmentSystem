@@ -1,0 +1,231 @@
+﻿/* General Body Styling */
+body {
+    background: url('/images/bg-1536x864.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+    padding: 100px 0;
+}
+
+.back-to-login {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #007bff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+    .back-to-login:hover {
+        background-color: #007bff;
+        color: #ffffff;
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        border-color: #007bff;
+    }
+
+/* Registration form container - optimized */
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    max-width: 100%;
+    margin: 50px auto; /* Reduced top & bottom margin */
+}
+
+
+/* Label Styling */
+label {
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+/* Title */
+h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Form Grid for 2-Column Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 15px;
+    width: 100%;
+}
+
+/* Full width items */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Inputs & Selects - smaller */
+input, select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 13px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+    input:focus, select:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+    }
+
+    input:hover, select:hover {
+        border-color: #0056b3;
+    }
+
+    input::placeholder {
+        color: #999;
+        opacity: 1;
+    }
+
+
+/* Primary Submit Button - smaller */
+button[type="submit"] {
+    width: 300px;
+    max-width: 100%;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s, transform 0.2s;
+    margin: 15px auto 0;
+    display: block;
+    text-align: center;
+}
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+        transform: scale(1.03);
+    }
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default, will be shown when 'display: flex' is applied */
+    position: fixed; /* Fixed position, stays in place when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background for contrast */
+    justify-content: center; /* Centers the modal content horizontally */
+    align-items: center; /* Centers the modal content vertically */
+    z-index: 1000; /* Ensures the modal is on top of other content */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    width: 85%;
+    max-width: 500px; /* Maximum width for the modal */
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid #e74c3c; /* Red border to enhance the red theme */
+}
+
+    /* Modal Header */
+    .modal-content h2 {
+        color: #e74c3c; /* Red color for the heading */
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* Modal Text */
+    .modal-content p {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 25px;
+        font-style: bold;
+    }
+
+    /* OK Button */
+    .modal-content button {
+        padding: 12px 24px;
+        font-size: 18px;
+        color: white;
+        background-color: #e74c3c; /* Red background for button */
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: 150px;
+    }
+
+        /* Hover effect for the button */
+        .modal-content button:hover {
+            background-color: #c0392b; /* Darker red on hover */
+            transform: translateY(-2px); /* Button lift effect */
+        }
+
+        /* Focused Button State */
+        .modal-content button:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(231, 76, 60, 0.6);
+        }
+
+/* Media Query for Responsiveness */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%; /* Full width on small screens */
+        padding: 25px;
+    }
+
+        .modal-content h2 {
+            font-size: 20px; /* Smaller heading text */
+        }
+
+        .modal-content p {
+            font-size: 16px; /* Smaller text on smaller screens */
+        }
+
+        .modal-content button {
+            width: 100%; /* Button takes full width on small screens */
+        }
+}
+
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .login-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}

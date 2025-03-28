@@ -1,0 +1,240 @@
+﻿@page
+@model WebBookingApp.Pages.makeAppointmentModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Appointment</title>
+    <link rel="stylesheet" href="@Url.Content("~/css/makeAppointment.css")">
+    <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/dashboardStudent.js"></script>
+    <!-- ✅ Flatpickr CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <img id="profileImage"
+                 src="/dashboardStudent?handler=ProfilePicture&t=@DateTime.Now.Ticks"
+                 alt="Profile Picture"
+                 onclick="openUploadModal()">
+            <div class="profile-info">
+                <h3>@Model.FirstName @Model.LastName</h3>
+
+            </div>
+        </div>
+
+
+        <ul>
+
+            <!-- ✅ Added "Menu" Text -->
+            <p class="menu-text">Menu</p>
+
+            <li><a asp-page="/dashboardStudent"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a asp-page="/BookedAppointments"><i class="fas fa-calendar-check"></i> Booked Appointments</a></li>
+            <li><a asp-page="/makeAppointment"><i class="fas fa-plus-circle"></i> Make Appointment</a></li>
+        </ul>
+
+        <a href="#" class="logout" onclick="showLogoutModal()">
+            <i class="fas fa-sign-out-alt"></i> Log out
+        </a>
+    </div>
+
+    <div class="main-content">
+        <h1 style="color: #e60000;">CICT Professors</h1>
+
+        <div class="professor-container">
+            <div class="professor-list">
+                @foreach (var prof in Model.Professors)
+                {
+                    <div class="professor-card">
+                        @if (prof.Picture != null)
+                        {
+                            var base64Image = Convert.ToBase64String(prof.Picture);
+                            <img src="data:image/jpeg;base64,@base64Image" alt="Professor Picture" class="professor-pic" />
+                        }
+                        else
+                        {
+                            <img src="/images/image.png" alt="Default Picture" class="professor-pic" />
+                        }
+
+                        <div class="professor-details">
+                            <div class="professor-name">@prof.FirstName @prof.LastName</div>
+                            <div class="professor-sub">CICT Professor</div>
+                        </div>
+
+                        <button class="book-btn" onclick="openBookingModal('@prof.FirstName @prof.LastName', @prof.ProfessorId)">Book</button>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ✅ BOOK Modal -->
+    <!-- ✅ BOOK Modal Updated to Post to Razor Model -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Book Appointment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- ✅ Form points to the BookAppointment Razor Handler -->
+                <div class="modal-body">
+                    <form method="post" asp-page-handler="BookAppointment">
+                        <div class="d-flex align-items-center mb-3">
+                            <span style="font-weight:600;">Appointment for Professor&nbsp;</span>
+                            <input asp-for="SelectedProfessorId" type="hidden" id="professorId" name="SelectedProfessorId" />
+                            <p id="professorName" style="font-weight:600; color:#e60000; margin:0;"></p>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="appointmentDate" class="form-label">Select Date</label>
+                                <input asp-for="AppointmentDate" class="form-control" id="appointmentDate" name="AppointmentDate" required />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="appointmentTime" class="form-label">Select Time</label>
+                                <input asp-for="AppointmentTime" type="time" class="form-control" id="appointmentTime" name="AppointmentTime" required />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="Purpose" class="form-label">Reason for Booking</label>
+                                <select asp-for="Purpose" class="form-select" id="reason" name="Purpose" required>
+                                    <option value="" selected disabled>Select Reason</option>
+                                    <option value="Consultation">Consultation</option>
+                                    <option value="Project Discussion">Project Discussion</option>
+                                    <option value="Grades Inquiry">Grades Inquiry</option>
+                                    <option value="Thesis Advising">Thesis Advising</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Mode</label>
+                                <select class="form-select" name="Mode" asp-for="Mode" required>
+                                    <option value="" selected disabled>Select Option</option>
+                                    <option value="Face-to-Face">Face-to-Face</option>
+                                    <option value="Online">Online</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Year & Section</label>
+                                <input type="text" class="form-control" name="YearSection" asp-for="YearSection" placeholder="Year & Section" required />
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <label class="form-label">Additional Notes</label>
+                                <textarea asp-for="AdditionalNotes" class="form-control" rows="3" placeholder="Enter your message here..."></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-danger">Submit Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Upload Profile Picture</h2>
+            <form id="uploadForm" method="post" enctype="multipart/form-data" asp-page-handler="UploadPicture">
+                <input type="file" name="UploadedFile" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+
+            <p id="uploadMessage"></p>
+        </div>
+    </div>
+
+
+    <!-- ✅ Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to log out?</p>
+            <div class="modal-buttons">
+                <button class="logout-btn" onclick="confirmLogout()">Yes</button>
+                <button class="cancel-btn" onclick="hideLogoutModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Hidden Logout Form -->
+    <form id="logoutForm" method="post" asp-page-handler="Logout"></form>
+
+
+    <script>
+        let unavailableDates = []; // store unavailable dates globally
+        let flatpickrInstance;
+
+        function openBookingModal(professorName, professorId) {
+            document.getElementById("professorName").textContent = professorName;
+            document.getElementById("professorId").value = professorId;
+
+            fetch(`/makeAppointment?handler=UnavailableDates&professorId=${professorId}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Unavailable Dates:", data);
+                    unavailableDates = data;
+                    initFlatpickr(unavailableDates); // initialize Flatpickr after fetching dates
+                })
+                .catch(error => console.error('Error fetching unavailable dates:', error));
+
+            const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'));
+            bookingModal.show();
+        }
+
+        function initFlatpickr(unavailable) {
+            if (flatpickrInstance) {
+                flatpickrInstance.destroy(); // destroy existing instance to avoid duplicates
+            }
+
+            flatpickrInstance = flatpickr("#appointmentDate", {
+                dateFormat: "Y-m-d",
+                minDate: "today",
+                disable: unavailable, // block unavailable dates
+                allowInput: false,     // prevent manual typing
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date().toISOString().split('T')[0];
+            const appointmentDate = document.getElementById('appointmentDate');
+            appointmentDate.setAttribute('min', today);
+        });
+    </script>
+
+
+
+
+    <!-- ✅ Hidden Logout Form -->
+    <form id="logoutForm" method="post" asp-page-handler="Logout"></form>
+
+    
+</body>
+</html>
