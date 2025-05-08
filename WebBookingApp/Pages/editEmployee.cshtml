@@ -1,0 +1,212 @@
+﻿@page
+@model WebBookingApp.Pages.editEmployeeModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="~/css/editEmployee.css">
+    <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="profile">
+            <img id="profileImage"
+                 src="/dashboardStudent?handler=ProfilePicture&t=@DateTime.Now.Ticks"
+                 alt="Profile Picture"
+                 onclick="openUploadModal()">
+            <div class="profile-info">
+                <h2>Mark Zarks</h2>
+                <h3>Administrator</h3>
+            </div>
+        </div>
+
+        <ul>
+            <p class="menu-text">Menu</p>
+
+            <li><a asp-page="/dashboardAdmin"><i class="fas fa-tachometer-alt"></i> Home</a></li>
+
+            <!-- Students Dropdown -->
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-user-plus"></i> Students <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a asp-page="/manageStudents"><i class="fas fa-users"></i> Manage Student</a></li>
+                    <li><a asp-page="/manageRegistration"><i class="fas fa-user-plus"></i> Manage Registration</a></li>
+                </ul>
+            </li>
+
+            <!-- Manage Employees Dropdown -->
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-user-cog"></i> Employees  <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a asp-page="/addEmployee"><i class="fas fa-user-plus"></i> Add Employee</a></li>
+                    <li><a asp-page="/viewEmployee"><i class="fas fa-address-book"></i> View Employee</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <a href="#" class="logout" onclick="showLogoutModal()">
+            <i class="fas fa-sign-out-alt"></i> Log out
+        </a>
+    </div>
+
+    <div class="main-content">
+        <form method="post" asp-page-handler="Save">
+            <!-- Personal Information Tab -->
+            <div class="form-section">
+                <h3>Personal Information</h3>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="FirstName" value="@Model.SelectedEmployee?.FirstName" required />
+                    </div>
+                    <div class="form-field">
+                        <label for="middleName">Middle Name</label>
+                        <input type="text" id="middleName" name="MiddleName" value="@Model.SelectedEmployee?.MiddleName" />
+                    </div>
+                   
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="LastName" value="@Model.SelectedEmployee?.LastName" required />
+                    </div>
+                    <div class="form-field">
+                        <label for="contactNumber">Contact Number</label>
+                        <input type="text" id="contactNumber" name="ContactNumber" value="@Model.SelectedEmployee?.ContactNumber" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="Gender">
+                            <option value="" selected="@((Model.SelectedEmployee?.Gender ?? "") == "" ? "selected" : null)">Select Gender</option>
+                            <option value="Male" selected="@((Model.SelectedEmployee?.Gender ?? "") == "Male" ? "selected" : null)">Male</option>
+                            <option value="Female" selected="@((Model.SelectedEmployee?.Gender ?? "") == "Female" ? "selected" : null)">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="DateOfBirth" value="@Model.SelectedEmployee?.DateOfBirth?.ToString("yyyy-MM-dd")" required />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress" name="EmailAddress" value="@Model.SelectedEmployee?.EmailAddress" required />
+                    </div>
+                    <div class="form-field">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="Address" required>@Model.SelectedEmployee?.Address</textarea>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="City" value="@Model.SelectedEmployee?.City" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Information Tab -->
+            <div class="form-section">
+                <h3>Professional Information</h3>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="program">Program</label>
+                        <input type="text" id="program" name="Program" value="@Model.SelectedEmployee?.Program" required />
+                    </div>
+                    <div class="form-field">
+                        <label for="role">Role</label>
+                        <select id="role" name="Role" required>
+                            <option value="Dean" selected="@(Model.SelectedEmployee?.Role == "Dean")">Dean</option>
+                            <option value="College Secretary" selected="@(Model.SelectedEmployee?.Role == "College Secretary")">College Secretary</option>
+                            <option value="Program Chair" selected="@(Model.SelectedEmployee?.Role == "Program Chair")">Program Chair</option>
+                            <option value="Research Coordinator" selected="@(Model.SelectedEmployee?.Role == "Research Coordinator")">Research Coordinator</option>
+                            <option value="Extension Coordinator" selected="@(Model.SelectedEmployee?.Role == "Extension Coordinator")">Extension Coordinator</option>
+                            <option value="Alumni Coordinator" selected="@(Model.SelectedEmployee?.Role == "Alumni Coordinator")">Alumni Coordinator</option>
+                            <option value="OJT Coordinator" selected="@(Model.SelectedEmployee?.Role == "OJT Coordinator")">OJT Coordinator</option>
+                            <option value="Instructor" selected="@(Model.SelectedEmployee?.Role == "Instructor")">Instructor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="studentOrg">Student Organization</label>
+                        <select id="studentOrg" name="StudentOrg" required>
+                            <option value="ROBOTCU - Adviser" selected="@(string.Equals(Model.SelectedEmployee?.StudentOrg, "ROBOTCU - Adviser", StringComparison.OrdinalIgnoreCase))">ROBOTCU - Adviser</option>
+                            <option value="CSS - Adviser" selected="@(string.Equals(Model.SelectedEmployee?.StudentOrg, "CSS - Adviser", StringComparison.OrdinalIgnoreCase))">CSS - Adviser</option>
+                            <option value="ICT-SF - Adviser" selected="@(string.Equals(Model.SelectedEmployee?.StudentOrg, "ICT-SF - Adviser", StringComparison.OrdinalIgnoreCase))">ICT-SF - Adviser</option>
+                            <option value="BEST-CS - Adviser" selected="@(string.Equals(Model.SelectedEmployee?.StudentOrg, "BEST-CS - Adviser", StringComparison.OrdinalIgnoreCase))">BEST-CS - Adviser</option>
+                            <option value="None" selected="@(string.Equals(Model.SelectedEmployee?.StudentOrg, "None", StringComparison.OrdinalIgnoreCase))">None</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="employmentStatus">Employment Status</label>
+                        <select id="employmentStatus" name="EmploymentStatus">
+                            <option value="Full-time" selected="@(Model.SelectedEmployee?.EmploymentStatus == "Full-time")">Full-time</option>
+                            <option value="Part-time" selected="@(Model.SelectedEmployee?.EmploymentStatus == "Part-time")">Part-time</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="joiningDate">Joining Date</label>
+                        <input type="date" id="joiningDate" name="JoiningDate" value="@Model.SelectedEmployee?.JoiningDate?.ToString("yyyy-MM-dd")" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden Field -->
+            <input type="hidden" name="ProfessorId" value="@Model.SelectedEmployee?.ProfessorId" />
+
+            <!-- Submit Button -->
+            <div class="form-row">
+                <button type="submit" class="btn-submit">Save</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Upload Profile Picture</h2>
+            <form id="uploadForm" method="post" enctype="multipart/form-data" asp-page-handler="UploadPicture">
+                <input type="file" name="UploadedFile" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+
+            <p id="uploadMessage"></p>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to log out?</p>
+            <div class="modal-buttons">
+                <button class="logout-btn" onclick="confirmLogout()">Yes</button>
+                <button class="cancel-btn" onclick="hideLogoutModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <form id="logoutForm" method="post" asp-page-handler="Logout"></form>
+
+</body>
+</html>

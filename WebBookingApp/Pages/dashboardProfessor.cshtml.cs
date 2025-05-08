@@ -7,24 +7,51 @@ using System.Data.SqlClient;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.IO;
+using System.Collections.Generic;
 
 namespace WebBookingApp.Pages
 {
     public class dashboardProfessorModel : PageModel
     {
         private readonly ILogger<dashboardProfessorModel> _logger;
-        private readonly string connString = "Server=MELON\\SQL2022;Database=BOOKING_DB;Trusted_Connection=True;";
+        private readonly string _connString;
 
         public string FirstName { get; set; } = "";
         public string LastName { get; set; } = "";
         public byte[]? ProfilePicture { get; set; }
-
+        public string Role { get; set; } = "";
         [BindProperty] public IFormFile? UploadedFile { get; set; }
         public string Message { get; set; } = string.Empty;
 
-        public dashboardProfessorModel(ILogger<dashboardProfessorModel> logger) => _logger = logger;
+        public List<AppointmentHistory> RecentAppointments { get; set; } = new();  // Add this line to hold appointment history
 
-        public void OnGet()
+        public class AppointmentHistory
+        {
+            public int AppointmentId { get; set; }
+            public string BookerName { get; set; } = "";
+            public string BookerType { get; set; } = "";
+            public DateTime AppointmentDate { get; set; }
+            public TimeSpan AppointmentTime { get; set; }
+            public string Purpose { get; set; } = "";
+            public string Status { get; set; } = "";
+            public string FormattedDate => AppointmentDate.ToString("MMM dd, yyyy");
+            public string FormattedTime => $"{AppointmentTime:hh\\:mm}";
+        }
+
+        public dashboardProfessorModel(ILogger<dashboardProfessorModel> logger, IConfiguration configuration)
+        {
+            _logger = logger;
+            // Fetch connection string dynamically from appsettings.json
+            _connString = configuration.GetConnectionString("DefaultConnection");
+
+            if (string.IsNullOrEmpty(_connString))
+            {
+                _logger.LogError("The connection string 'DefaultConnection' is missing in the configuration.");
+                throw new InvalidOperationException("The ConnectionString property has not been initialized.");
+            }
+        }
+
+        public async Task OnGetAsync()
         {
             _logger.LogInformation("OnGet() started");
             string userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
@@ -35,41 +62,108 @@ namespace WebBookingApp.Pages
                 return;
             }
 
-            using SqlConnection conn = new(connString);
-            conn.Open();
-
-            // ✅ Fetch FirstName & LastName from dbo.userCICT
-            string query = "SELECT first_name, last_name FROM dbo.userCICT WHERE email = @Email";
-            using (SqlCommand cmd = new(query, conn))
+            // Define tasks for fetching data
+            var fetchNameAndRoleTask = Task.Run(async () =>
             {
-                cmd.Parameters.AddWithValue("@Email", userEmail);
-                using SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                try
                 {
-                    FirstName = reader["first_name"].ToString();
-                    LastName = reader["last_name"].ToString();
-                    _logger.LogInformation($"Retrieved Name: {FirstName} {LastName}");
-                }
-            }
+                    using SqlConnection conn = new(_connString);
+                    await conn.OpenAsync();
 
-            // ✅ Fetch Profile Picture from dbo.userPictures
-            query = "SELECT Picture FROM dbo.userPictures WHERE email = @Email";
-            using (SqlCommand cmd = new(query, conn))
+                    string query = "SELECT first_name, last_name, role FROM dbo.userCICT WHERE email = @Email";
+                    using SqlCommand cmd = new(query, conn);
+                    cmd.Parameters.AddWithValue("@Email", userEmail);
+                    using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                    if (reader.Read())
+                    {
+                        FirstName = reader["first_name"].ToString();
+                        LastName = reader["last_name"].ToString();
+                        Role = reader["role"].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError($"Error fetching name and role: {ex.Message}");
+                }
+            });
+
+            var fetchProfilePictureTask = Task.Run(async () =>
             {
-                cmd.Parameters.AddWithValue("@Email", userEmail);
-                using SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read() && reader["Picture"] != DBNull.Value)
+                try
                 {
-                    ProfilePicture = (byte[])reader["Picture"];
-                    _logger.LogInformation("Profile picture retrieved successfully.");
+                    using SqlConnection conn = new(_connString);
+                    await conn.OpenAsync();
+
+                    string query = "SELECT Picture FROM dbo.userPictures WHERE email = @Email";
+                    using SqlCommand cmd = new(query, conn);
+                    cmd.Parameters.AddWithValue("@Email", userEmail);
+                    using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                    if (reader.Read() && reader["Picture"] != DBNull.Value)
+                    {
+                        ProfilePicture = (byte[])reader["Picture"];
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    _logger.LogWarning("No profile picture found.");
+                    _logger.LogError($"Error fetching profile picture: {ex.Message}");
                 }
-            }
+            });
+
+            // Fetch the recent appointment history
+            var fetchAppointmentHistoryTask = Task.Run(async () =>
+            {
+                try
+                {
+                    using SqlConnection conn = new(_connString);
+                    await conn.OpenAsync();
+
+                    string query = @"
+                        SELECT TOP 5
+                            a.appointment_id,
+                            COALESCE(s.first_name + ' ' + s.last_name, al.first_name + ' ' + al.last_name) AS booker_name,
+                            CASE WHEN a.student_id IS NOT NULL THEN 'Student' ELSE 'Alumni' END AS booker_type,
+                            a.appointment_date,
+                            a.appointment_time,
+                            a.purpose,
+                            a.status
+                        FROM dbo.Appointments a
+                        LEFT JOIN dbo.userStudents s ON a.student_id = s.student_id
+                        LEFT JOIN dbo.userAlumni al ON a.alumni_id = al.alumni_id
+                        WHERE a.professor_id = (SELECT professor_id FROM dbo.userCICT WHERE email = @Email)
+                        ORDER BY a.appointment_date DESC, a.appointment_time DESC";
+
+                    using SqlCommand cmd = new(query, conn);
+                    cmd.Parameters.AddWithValue("@Email", userEmail);
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        while (reader.Read())
+                        {
+                            RecentAppointments.Add(new AppointmentHistory
+                            {
+                                AppointmentId = reader.GetInt32(0),
+                                BookerName = reader["booker_name"].ToString(),
+                                BookerType = reader["booker_type"].ToString(),
+                                AppointmentDate = reader.GetDateTime(3),
+                                AppointmentTime = reader.GetTimeSpan(4),
+                                Purpose = reader["purpose"].ToString(),
+                                Status = reader["status"].ToString()
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError($"Error fetching appointment history: {ex.Message}");
+                }
+            });
+
+            // Run tasks in parallel
+            await Task.WhenAll(fetchNameAndRoleTask, fetchProfilePictureTask, fetchAppointmentHistoryTask);
+
+            _logger.LogInformation("Data fetched successfully.");
         }
 
+        // [Keep all existing methods for profile picture, logout, etc.]
         public IActionResult OnGetProfilePicture()
         {
             string userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
@@ -77,7 +171,7 @@ namespace WebBookingApp.Pages
 
             byte[]? profileImage = null;
 
-            using SqlConnection conn = new(connString);
+            using SqlConnection conn = new(_connString);
             conn.Open();
 
             // ✅ Fetch Profile Picture from dbo.userPictures
@@ -136,7 +230,7 @@ namespace WebBookingApp.Pages
                     return Page();
                 }
 
-                using SqlConnection conn = new(connString);
+                using SqlConnection conn = new(_connString);
                 await conn.OpenAsync();
 
                 // ✅ Check if user is a professor

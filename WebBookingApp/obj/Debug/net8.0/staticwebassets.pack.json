@@ -5,8 +5,52 @@
       "PackagePath": "staticwebassets\\WebBookingApp.r2qxbf7sht.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AlumniAppointments.css",
+      "PackagePath": "staticwebassets\\css\\AlumniAppointments.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AlumniSettings.css",
+      "PackagePath": "staticwebassets\\css\\AlumniSettings.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AppointmentList.css",
+      "PackagePath": "staticwebassets\\css\\AppointmentList.css"
+    },
+    {
       "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\BookedAppointments.css",
       "PackagePath": "staticwebassets\\css\\BookedAppointments.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\EditAlumniProfile.css",
+      "PackagePath": "staticwebassets\\css\\EditAlumniProfile.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\InstructorSettings.css",
+      "PackagePath": "staticwebassets\\css\\InstructorSettings.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\OrgSettings.css",
+      "PackagePath": "staticwebassets\\css\\OrgSettings.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\SetAvailabilityAlumni.css",
+      "PackagePath": "staticwebassets\\css\\SetAvailabilityAlumni.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\SetAvailabilityStudentOrg.css",
+      "PackagePath": "staticwebassets\\css\\SetAvailabilityStudentOrg.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\StudentOrgAppointments.css",
+      "PackagePath": "staticwebassets\\css\\StudentOrgAppointments.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\StudentSettings.css",
+      "PackagePath": "staticwebassets\\css\\StudentSettings.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\addEmployee.css",
+      "PackagePath": "staticwebassets\\css\\addEmployee.css"
     },
     {
       "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\dashboardAdmin.css",
@@ -21,6 +65,14 @@
       "PackagePath": "staticwebassets\\css\\dashboardStudent.css"
     },
     {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\editEmployee.css",
+      "PackagePath": "staticwebassets\\css\\editEmployee.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\editStudentProfile.css",
+      "PackagePath": "staticwebassets\\css\\editStudentProfile.css"
+    },
+    {
       "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
@@ -31,6 +83,10 @@
     {
       "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageAppointment.css",
       "PackagePath": "staticwebassets\\css\\manageAppointment.css"
+    },
+    {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageRegistration.css",
+      "PackagePath": "staticwebassets\\css\\manageRegistration.css"
     },
     {
       "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageStudents.css",
@@ -49,28 +105,28 @@
       "PackagePath": "staticwebassets\\css\\studentRegistration.css"
     },
     {
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\viewEmployee.css",
+      "PackagePath": "staticwebassets\\css\\viewEmployee.css"
+    },
+    {
       "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\6262461230291732936.jpg",
-      "PackagePath": "staticwebassets\\images\\6262461230291732936.jpg"
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\6285310516435992971.jpg",
+      "PackagePath": "staticwebassets\\images\\6285310516435992971.jpg"
     },
     {
-      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\bg-1536x864.png",
-      "PackagePath": "staticwebassets\\images\\bg-1536x864.png"
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\Login Page.png",
+      "PackagePath": "staticwebassets\\images\\Login Page.png"
     },
     {
-      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\cict.jpg",
-      "PackagePath": "staticwebassets\\images\\cict.jpg"
+      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\banner.jpg",
+      "PackagePath": "staticwebassets\\images\\banner.jpg"
     },
     {
       "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\image.png",
       "PackagePath": "staticwebassets\\images\\image.png"
-    },
-    {
-      "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\tcu.jpg",
-      "PackagePath": "staticwebassets\\images\\tcu.jpg"
     },
     {
       "Id": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\js\\dashboardAdmin.js",

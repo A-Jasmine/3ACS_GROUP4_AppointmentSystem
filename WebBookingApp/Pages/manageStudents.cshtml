@@ -9,9 +9,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Students</title>
+    <title>Student List</title>
     <link rel="stylesheet" href="~/css/manageStudents.css">
     <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
 
@@ -22,18 +24,34 @@
                  alt="Profile Picture"
                  onclick="openUploadModal()">
             <div class="profile-info">
-                <h3>@Model.FirstName</h3>  <!-- Displaying only FirstName (which now holds username) -->
+                <h2>Mark Zarks</h2>
+                <h3>Administrator</h3>
             </div>
 
         </div>
 
         <ul>
-
-            <!-- ✅ Added "Menu" Text -->
             <p class="menu-text">Menu</p>
 
-            <li><a asp-page="/dashboardAdmin"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a asp-page="/manageStudents"><i class="fas fa-users"></i> Manage students</a></li>
+            <li><a asp-page="/dashboardAdmin"><i class="fas fa-tachometer-alt"></i> Home</a></li>
+
+            <!-- Students Dropdown -->
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-user-plus"></i> Students <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a asp-page="/manageStudents"><i class="fas fa-users"></i> Manage Student</a></li>
+                    <li><a asp-page="/manageRegistration"><i class="fas fa-user-plus"></i> Manage Registration</a></li>
+                </ul>
+            </li>
+
+            <!-- Manage Employees Dropdown -->
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-user-cog"></i> Employees  <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a asp-page="/addEmployee"><i class="fas fa-user-plus"></i> Add Employee</a></li>
+                    <li><a asp-page="/viewEmployee"><i class="fas fa-address-book"></i> View Employee</a></li>
+                </ul>
+            </li>
         </ul>
 
         <a href="#" class="logout" onclick="showLogoutModal()">
@@ -65,38 +83,68 @@
         </form>
 
 
-
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
+                    <th>Student ID</th>
                     <th>First Name</th>
                     <th>Middle Name</th>
                     <th>Last Name</th>
                     <th>Student Id</th>
                     <th>Email</th>
                     <th>Mobile Number</th>
-                    <th>Department</th>
+                    <th>Program</th>
                     <th>Year Level</th>
                     <th>Role</th>
+                    <th>Actions</th>  <!-- Add Actions Column -->
                 </tr>
             </thead>
             <tbody>
                 @foreach (var student in Model.Students)
                 {
                     <tr>
+                        <td>@student.StudentID</td>
                         <td>@student.FirstName</td>
                         <td>@student.MiddleName</td>
                         <td>@student.LastName</td>
                         <td>@student.StudentID</td>
                         <td>@student.Email</td>
                         <td>@student.MobileNumber</td>
-                        <td>@student.Department</td>
+                        <td>@student.Program</td>
                         <td>@student.YearLevel</td>
                         <td>@student.Role</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <ul class="dropdown-menu">
+                                 
+                                    <li>
+                                        <a class="dropdown-item" href="@Url.Page("/editStudentProfile", new { id = student.StudentID })">Edit Student</a>
+                                    </li>
+
+                                    @if (student.Role == "Alumni")
+                                    {
+                                        <li>
+                                            <a class="dropdown-item" href="@Url.Page("/EditAlumniProfile", new { id = student.StudentID })">Edit Alumni</a>
+                                        </li>
+                                    }
+
+                                    <li>
+                                        <form method="post" asp-page-handler="Delete" asp-route-id="@student.StudentID" onsubmit="return confirm('Are you sure you want to delete this profile?')">
+                                            <button type="submit" class="dropdown-item text-danger">Delete</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
                     </tr>
                 }
+
             </tbody>
         </table>
+
     </div>
 
 

@@ -1,0 +1,223 @@
+﻿@page
+@model WebBookingApp.Pages.SetAvailabilityStudentOrgModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Availability</title>
+    <link rel="stylesheet" href="~/css/SetAvailabilityStudentOrg.css">
+    <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="profile">
+            <img id="profileImage"
+                 src="/dashboardStudent?handler=ProfilePicture&t=@DateTime.Now.Ticks"
+                 alt="Profile Picture"
+                 onclick="openUploadModal()">
+            <div class="profile-info">
+                <h2>@Model.FirstName @Model.LastName</h2>
+                @if (!string.IsNullOrWhiteSpace(Model.StudentOrganizationName) && Model.StudentOrganizationName != "N/A")
+                {
+                    <h3>@Model.StudentOrganizationName.ToUpper() @Model.StudentOrgRole</h3>
+                }
+                else
+                {
+                    <h3>@Model.Role</h3>
+                }
+            </div>
+        </div>
+
+        <ul>
+            <p class="menu-text">Menu</p>
+            <li><a asp-page="/dashboardStudent"><i class="fas fa-tachometer-alt"></i> Home</a></li>
+            <li><a asp-page="/BookedAppointments"><i class="fas fa-calendar-check"></i> Booked Appointments</a></li>
+            <li><a asp-page="/makeAppointment"><i class="fas fa-plus-circle"></i> Make Appointment</a></li>
+
+            @if (Model.Role == "Alumni")
+            {
+                <li><a asp-page="/AlumniAppointments"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
+                <li><a asp-page="/SetAvailabilityAlumni"><i class="fas fa-calendar-alt"></i> Set Availability</a></li>
+            }
+            else if (Model.Role == "StudentOrgMember" || (!string.IsNullOrEmpty(Model.StudentOrgRole) && Model.StudentOrgRole != "N/A"))
+            {
+                <li><a asp-page="/StudentOrgAppointments"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
+                <li><a asp-page="/SetAvailabilityStudentOrg"><i class="fas fa-calendar-alt"></i> Set Availability</a></li>
+            }
+
+            <!-- Settings Menu Item -->
+            @if (Model.Role == "Student" && string.IsNullOrEmpty(Model.StudentOrgRole))
+            {
+                <li><a asp-page="/StudentSettings"><i class="fas fa-cog"></i> Settings</a></li>
+            }
+            else if (Model.Role == "StudentOrgMember" || Model.Role == "StudentOrganizationMember" ||
+            (!string.IsNullOrEmpty(Model.StudentOrgRole) && Model.StudentOrgRole != "N/A"))
+            {
+                <li><a asp-page="/OrgSettings"><i class="fas fa-cog"></i> Settings</a></li>
+            }
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <!-- Set Availability Form -->
+        <form method="post" class="availability-form">
+            <h1>Set Availability</h1>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" onchange="toggleFields()">
+                <option value="">Select</option>
+                <option value="available">Available</option>
+                <option value="unavailable">Unavailable</option>
+            </select>
+
+            <div class="time-section" style="display:none;">
+                <label for="start_time">Start Time:</label>
+                <input type="time" id="start_time" name="start_time">
+
+                <label for="end_time">End Time:</label>
+                <input type="time" id="end_time" name="end_time">
+
+                <label for="capacity">Max Capacity:</label>
+                <input type="number" id="capacity" name="capacity" min="1" value="1">
+            </div>
+
+            <div class="available-date-section" style="display:none;">
+                <label for="available_date">Available Date:</label>
+                <input type="date" id="available_date" name="available_date">
+            </div>
+
+            <div class="date-section" style="display:none;">
+                <label for="unavailable_date">Unavailable Date:</label>
+                <input type="date" id="unavailable_date" name="available_date">
+            </div>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <!-- AVAILABILITY TABLE -->
+    <div class="availability-container">
+        <h3>Your Availability</h3>
+
+        <table class="availability-table">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Capacity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.AvailabilityList != null && Model.AvailabilityList.Any())
+                {
+                    foreach (var item in Model.AvailabilityList)
+                    {
+                        <tr>
+                            <td>@item.Status</td>
+                            <td>@item.AvailableDate?.ToString("yyyy-MM-dd")</td>
+                            <td>
+                                @if (item.StartTime.HasValue && item.EndTime.HasValue)
+                                {
+                                    @($"{item.StartTime.Value:hh\\:mm} - {item.EndTime.Value:hh\\:mm}")
+                                }
+                                else
+                                {
+                                    <span>N/A</span>
+                                }
+                            </td>
+                            <td>
+                                @if (item.MaxCapacity.HasValue)
+                                {
+                                    <span>Max: @item.MaxCapacity</span>
+                                }
+                                else
+                                {
+                                    <span>N/A</span>
+                                }
+                            </td>
+                            <td>
+                                <form method="post" asp-page-handler="DeleteAvailability">
+                                    <input type="hidden" name="AvailabilityID" value="@item.AvailabilityID" />
+                                    <button type="submit" class="delete-btn">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">No availability records found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Upload Profile Picture</h2>
+            <form id="uploadForm" method="post" enctype="multipart/form-data" asp-page-handler="UploadPicture">
+                <input type="file" name="UploadedFile" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+            <p id="uploadMessage"></p>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to log out?</p>
+            <div class="modal-buttons">
+                <button class="logout-btn" onclick="confirmLogout()">Yes</button>
+                <button class="cancel-btn" onclick="hideLogoutModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/dashboardStudent.js"></script>
+    <script>
+        function toggleFields() {
+            const status = document.getElementById('status').value;
+            document.querySelector('.time-section').style.display = (status === 'available') ? 'block' : 'none';
+            document.querySelector('.available-date-section').style.display = (status === 'available') ? 'block' : 'none';
+            document.querySelector('.date-section').style.display = (status === 'unavailable') ? 'block' : 'none';
+        }
+
+        window.onload = function () {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('unavailable_date').setAttribute('min', today);
+            document.getElementById('available_date').setAttribute('min', today);
+        };
+
+        function openUploadModal() {
+            document.getElementById('uploadModal').style.display = 'block';
+        }
+
+        function showLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'block';
+        }
+
+        function hideLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+
+        function confirmLogout() {
+            document.getElementById('logoutForm').submit();
+        }
+    </script>
+</body>
+</html>

@@ -8,6 +8,7 @@
 <script src="~/js/dashboardAdmin.js"></script>
 <script src="/_framework/aspnetcore-browser-refresh.js"></script>
 <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/zxcvbn@4.4.2/dist/zxcvbn.js"></script>
 
 <a href="/Login" class="back-to-login" style="color: red;">
     <i class="fas fa-home"></i>
@@ -15,9 +16,10 @@
 
 <div class="login-container">
     <h2>Register Now!</h2>
-    
-    <form method="post" enctype="multipart/form-data"> <!-- Add enctype for file upload -->
+
+    <form method="post" enctype="multipart/form-data" id="registrationForm">
         <div class="form-grid">
+            <!-- Personal Info Fields -->
             <div class="form-group">
                 <label asp-for="Input.FirstName">First Name</label>
                 <input asp-for="Input.FirstName" placeholder="First Name" required />
@@ -25,7 +27,7 @@
 
             <div class="form-group">
                 <label asp-for="Input.MiddleName">Middle Name</label>
-                <input asp-for="Input.MiddleName" placeholder="Middle Name" required />
+                <input asp-for="Input.MiddleName" placeholder="Middle Name" />
             </div>
 
             <div class="form-group">
@@ -33,25 +35,31 @@
                 <input asp-for="Input.LastName" placeholder="Last Name" required />
             </div>
 
+            <!-- Email with AJAX check -->
             <div class="form-group">
                 <label asp-for="Input.Email">Email Address</label>
-                <input asp-for="Input.Email" placeholder="Email Address" required />
+                <input asp-for="Input.Email" placeholder="Email Address" required id="emailInput" />
+                <span id="emailAvailability" class="validation-message"></span>
             </div>
 
+            <!-- ID Field -->
             <div class="form-group">
-                <label asp-for="Input.StudentId">Student ID</label>
-                <input asp-for="Input.StudentId" placeholder="Student ID (e.g., 22-00XXXX)" required />
+                <label id="idLabel" asp-for="Input.StudentId">ID</label>
+                <input asp-for="Input.StudentId" placeholder="Enter your ID" required id="idInput" />
+                <span id="idAvailability" class="validation-message"></span>
             </div>
 
+            <!-- Program Field -->
             <div class="form-group">
-                <label asp-for="Input.Department">Department</label>
-                <select asp-for="Input.Department" required>
-                    <option value="">Select Department</option>
+                <label asp-for="Input.Program">Program</label>
+                <select asp-for="Input.Program" required>
+                    <option value="">Select Program</option>
                     <option value="CS">Computer Science</option>
                     <option value="IS">Information System</option>
                 </select>
             </div>
 
+            <!-- Year Level Field -->
             <div class="form-group" id="yearLevelField">
                 <label asp-for="Input.YearLevel">Year Level</label>
                 <select asp-for="Input.YearLevel">
@@ -63,23 +71,32 @@
                 </select>
             </div>
 
+            <!-- Phone Number Field -->
             <div class="form-group">
                 <label asp-for="Input.MobileNumber">Mobile Number</label>
-                <input asp-for="Input.MobileNumber" placeholder="Mobile Number" required />
+                <input asp-for="Input.MobileNumber" placeholder="Mobile Number" required id="phoneInput" />
+                <span id="phoneValidation" class="validation-message"></span>
             </div>
 
+            <!-- Password Fields -->
             <div class="form-group">
                 <label asp-for="Input.Password">Password</label>
-                <input asp-for="Input.Password" type="password" placeholder="Password" required />
+                <input asp-for="Input.Password" type="password" placeholder="Password" required id="passwordInput" />
+                <div id="passwordStrength" class="password-strength-meter">
+                    <div class="strength-bar"></div>
+                    <span id="passwordStrengthText"></span>
+                </div>
             </div>
 
             <div class="form-group">
                 <label asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <input asp-for="Input.ConfirmPassword" type="password" placeholder="Confirm Password" required />
+                <span id="passwordMatch" class="validation-message"></span>
             </div>
 
+            <!-- Role Selection -->
             <div class="form-group full-width">
-                <label asp-for="Input.Role">Role</label>
+                <label asp-for="Input.Role">Signing in as:</label>
                 <select asp-for="Input.Role" id="roleSelect" required>
                     <option value="" disabled selected hidden>Select Role</option>
                     <option value="Student">Student</option>
@@ -87,15 +104,22 @@
                 </select>
             </div>
 
-            <!-- Upload Picture Field -->
+            <!-- Upload Images -->
             <div class="form-group full-width">
-                <label for="idPicture">Upload Student/Alumni ID</label>
-                <input type="file" id="idPicture" name="idPicture" accept="image/*" required onchange="previewImage(event)" />
-                <img id="idPicturePreview" src="#" alt="ID Preview" style="display: none; width: 200px; height: auto; margin-top: 10px;" />
+                <label>Please upload a photo of both the front and back of your school ID (2 images required).</label>
+                <div id="imageUploadContainer">
+                    <div class="image-upload-box first-image-box">
+                        <input type="file" name="Images" accept="image/*" required class="image-upload-input" onchange="previewImage(this)" />
+                        <img class="image-preview" src="#" alt="Image Preview" style="display: none;" />
+                        <button type="button" class="add-image-btn" onclick="addImageUpload()">
+                            <i class="fas fa-plus"></i> Add Second Image (Required)
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <button type="submit" class="register-btn">Submit</button>
+        <button type="submit" class="register-btn" id="submitBtn">Submit</button>
     </form>
 
     <!-- Modal to display success message -->
@@ -108,25 +132,228 @@
     </div>
 
     <script>
-        function previewImage(event) {
-            var reader = new FileReader();
-            reader.onload = function () {
-                var preview = document.getElementById("idPicturePreview");
-                preview.src = reader.result;
-                preview.style.display = "block";
+        // === IMAGE UPLOAD HANDLING ===
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                const preview = input.parentElement.querySelector('.image-preview');
+
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                    preview.style.maxWidth = "200px";
+                    preview.style.maxHeight = "200px";
+                    preview.style.marginTop = "10px";
+                }
+
+                reader.readAsDataURL(input.files[0]);
             }
-            reader.readAsDataURL(event.target.files[0]);
         }
 
+        function addImageUpload() {
+            const container = document.getElementById('imageUploadContainer');
+            const uploadedImages = container.querySelectorAll('.image-upload-input');
+            const uploadedCount = Array.from(uploadedImages).filter(input => input.files.length > 0).length;
+
+            if (uploadedCount >= 2) {
+                alert("Maximum of 2 images allowed");
+                return;
+            }
+
+            const newUploadBox = document.createElement('div');
+            newUploadBox.className = 'image-upload-box';
+            newUploadBox.innerHTML = `
+                <input type="file" name="Images" accept="image/*" class="image-upload-input" onchange="previewImage(this)" required />
+                <img class="image-preview" src="#" alt="Image Preview" style="display: none;" />
+                <button type="button" class="remove-image-btn" onclick="this.parentElement.remove(); updateImageUploads();">
+                    <i class="fas fa-times"></i> Remove
+                </button>
+            `;
+            container.appendChild(newUploadBox);
+            updateImageUploads();
+        }
+
+        function updateImageUploads() {
+            const container = document.getElementById('imageUploadContainer');
+            const existingBoxes = container.querySelectorAll('.image-upload-box');
+            const firstBox = container.querySelector('.first-image-box');
+            const addButton = firstBox.querySelector('.add-image-btn');
+
+            // Show/hide add button
+            if (existingBoxes.length < 2) {
+                addButton.style.display = 'block';
+            } else {
+                addButton.style.display = 'none';
+            }
+
+            existingBoxes.forEach(box => {
+                const input = box.querySelector('input');
+                input.required = true;
+            });
+        }
+
+        // FORM SUBMISSION VALIDATION
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            const container = document.getElementById('imageUploadContainer');
+            const existingBoxes = container.querySelectorAll('.image-upload-box');
+
+            if (existingBoxes.length < 2) {
+                e.preventDefault();
+                alert("Please upload exactly 2 images (front and back of your ID)");
+                return false;
+            }
+
+            let valid = true;
+            existingBoxes.forEach(box => {
+                const input = box.querySelector('input');
+                if (!input.files || input.files.length === 0) {
+                    valid = false;
+                }
+            });
+
+            if (!valid) {
+                e.preventDefault();
+                alert("Please make sure both images are selected");
+                return false;
+            }
+
+            return true;
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const firstInput = document.querySelector('.first-image-box input');
+            firstInput.required = true;
+        });
+
+        // === REDIRECT HANDLER ===
         function redirectToLogin() {
             window.location.href = "/Login";
         }
 
+        // === ROLE SELECTION ===
         document.getElementById("roleSelect").addEventListener("change", function () {
-            var yearLevelField = document.getElementById("yearLevelField");
-            yearLevelField.style.display = (this.value === "Alumni") ? "none" : "block";
+            const role = this.value;
+            const yearLevelField = document.getElementById("yearLevelField");
+            const idLabel = document.getElementById("idLabel");
+
+            if (role === "Alumni") {
+                yearLevelField.style.display = "none";
+                idLabel.innerText = "Alumni ID";
+            } else {
+                yearLevelField.style.display = "block";
+                idLabel.innerText = "Student ID";
+            }
+        });
+        document.getElementById("roleSelect").dispatchEvent(new Event("change"));
+
+        // === EMAIL CHECK ===
+        document.getElementById("emailInput").addEventListener("blur", function () {
+            const email = this.value;
+            if (!email) return;
+
+            fetch(`/studentRegistration?handler=CheckEmail&email=${encodeURIComponent(email)}`)
+                .then(response => response.json())
+                .then(data => {
+                    const message = document.getElementById("emailAvailability");
+                    message.textContent = data.exists ? "✗ Email already exists!" : "✓ Email available";
+                    message.style.color = data.exists ? "red" : "green";
+                })
+                .catch(error => {
+                    console.error("Error checking email:", error);
+                    document.getElementById("emailAvailability").textContent = "Error checking email availability";
+                });
         });
 
-        document.getElementById("roleSelect").dispatchEvent(new Event("change"));
+        // === ID CHECK ===
+        document.getElementById("idInput").addEventListener("blur", function () {
+            const id = this.value;
+            const role = document.getElementById("roleSelect").value;
+            if (!id) return;
+
+            fetch(`/studentRegistration?handler=CheckId&id=${encodeURIComponent(id)}&role=${role}`)
+                .then(response => response.json())
+                .then(data => {
+                    const message = document.getElementById("idAvailability");
+                    message.textContent = data.exists ? "✗ ID already exists!" : "✓ ID available";
+                    message.style.color = data.exists ? "red" : "green";
+                })
+                .catch(error => {
+                    console.error("Error checking ID:", error);
+                    document.getElementById("idAvailability").textContent = "Error checking ID availability";
+                });
+        });
+
+        // === PHONE VALIDATION ===
+        document.getElementById("phoneInput").addEventListener("blur", function () {
+            validatePhoneNumber(this.value);
+        });
+
+        function validatePhoneNumber(phone) {
+            const phoneRegex = /^[0-9]{10,15}$/;
+            const message = document.getElementById("phoneValidation");
+
+            if (!phoneRegex.test(phone) || /^0+$/.test(phone)) {
+                message.textContent = "✗ Invalid phone number";
+                message.style.color = "red";
+                return false;
+            }
+
+            fetch(`/studentRegistration?handler=CheckPhone&phone=${encodeURIComponent(phone)}`)
+                .then(response => response.json())
+                .then(data => {
+                    message.textContent = data.exists ? "✗ Phone number already exists!" : "✓ Phone number valid";
+                    message.style.color = data.exists ? "red" : "green";
+                })
+                .catch(error => {
+                    console.error("Error checking phone:", error);
+                    message.textContent = "Error checking phone number";
+                });
+
+            return true;
+        }
+
+        // === PASSWORD STRENGTH ===
+        document.getElementById("passwordInput").addEventListener("input", function () {
+            checkPasswordStrength(this.value);
+        });
+
+        function checkPasswordStrength(password) {
+            if (!password) return;
+
+            const result = zxcvbn(password);
+            const strengthText = document.getElementById("passwordStrengthText");
+            const strengthBar = document.querySelector(".strength-bar");
+
+            const strengthLabels = ["Very Weak", "Weak", "Good", "Strong"];
+            const colors = ["red", "orange", "yellow", "green"];
+            const score = result.score;
+
+            strengthText.textContent = strengthLabels[score] || "Very Weak";
+            strengthText.style.color = colors[score] || "red";
+            strengthBar.style.width = `${(score + 1) * 20}%`;
+            strengthBar.style.backgroundColor = colors[score] || "red";
+        }
+
+        // === PASSWORD MATCH ===
+        document.getElementById("Input_ConfirmPassword").addEventListener("input", function () {
+            checkPasswordMatch();
+        });
+
+        function checkPasswordMatch() {
+            const password = document.getElementById("passwordInput").value;
+            const confirmPassword = document.getElementById("Input_ConfirmPassword").value;
+            const message = document.getElementById("passwordMatch");
+
+            if (password && confirmPassword) {
+                if (password !== confirmPassword) {
+                    message.textContent = "✗ Passwords don't match!";
+                    message.style.color = "red";
+                } else {
+                    message.textContent = "✓ Passwords match";
+                    message.style.color = "green";
+                }
+            }
+        }
     </script>
+
 </div>

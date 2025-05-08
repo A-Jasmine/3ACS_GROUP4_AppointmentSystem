@@ -1,0 +1,237 @@
+﻿@page
+@model WebBookingApp.Pages.AlumniAppointmentsModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Dashboard</title>
+    <link rel="stylesheet" href="~/css/AlumniAppointments.css">
+    <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <img id="profileImage"
+                 src="/dashboardStudent?handler=ProfilePicture&t=@DateTime.Now.Ticks"
+                 alt="Profile Picture"
+                 onclick="openUploadModal()">
+            <div class="profile-info">
+                <h2>@Model.FirstName @Model.LastName</h2>
+                <h3>@Model.Role</h3>
+            </div>
+        </div>
+
+        <ul>
+            <p class="menu-text">Menu</p>
+            <li><a asp-page="/dashboardStudent"><i class="fas fa-tachometer-alt"></i> Home</a></li>
+            <li><a asp-page="/BookedAppointments"><i class="fas fa-calendar-check"></i> Booked Appointments</a></li>
+            <li><a asp-page="/makeAppointment"><i class="fas fa-plus-circle"></i> Make Appointment</a></li>
+            @if (Model.Role == "Alumni")
+            {
+                <li><a asp-page="/AlumniAppointments"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
+                <li><a asp-page="/SetAvailabilityAlumni"><i class="fas fa-calendar-alt"></i> Set Availability</a></li>
+            }
+
+
+            @if (Model.Role == "Alumni")
+            {
+                <li><a asp-page="/AlumniSettings"><i class="fas fa-cog"></i> Settings</a></li>
+            }
+        </ul>
+
+        <a href="#" class="logout" onclick="showLogoutModal()">
+            <i class="fas fa-sign-out-alt"></i> Log out
+        </a>
+    </div>
+    <div class="main-content">
+        <h1>YOUR APPOINTMENTS</h1>
+
+        <div class="filter-container">
+            <form method="get" class="status-filter">
+                <label for="statusFilter">Filter by:</label>
+                <select id="statusFilter" name="statusFilter" onchange="this.form.submit()">
+                    <option value="All" selected="@(Model.StatusFilter == "All")">All Appointments</option>
+                    <option value="Pending" selected="@(Model.StatusFilter == "Pending")">Pending</option>
+                    <option value="Approved" selected="@(Model.StatusFilter == "Approved")">Approved</option>
+                    <option value="Completed" selected="@(Model.StatusFilter == "Completed")">Completed</option>
+                    <option value="Declined" selected="@(Model.StatusFilter == "Declined")">Declined</option>
+                    <option value="Cancelled" selected="@(Model.StatusFilter == "Cancelled")">Cancelled</option>
+                </select>
+            </form>
+        </div>
+
+        @if (Model.PendingAppointments.Any())
+        {
+            <table class="appointments-table">
+                <thead>
+                    <tr>
+                        
+                        <th>NAME</th>
+                        <th>DATE</th>
+                        <th>TIME</th>
+                        <th>PURPOSE</th>
+                        <th>MODE</th>
+                        <th>YEAR/SECTION</th>
+                        <th>NOTES</th>
+                        <th>APPROVAL REMARKS</th>
+                        <th>STATUS</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var appointment in Model.PendingAppointments)
+                    {
+                        <tr>
+                            <td class="booker-cell">
+                                <img src="@appointment.BookerProfilePicture" alt="Booker" class="booker-avatar" />
+                                <span>@appointment.StudentName</span>
+                            </td>
+                            <td>@appointment.Date</td>
+                            <td>@appointment.Time</td>
+                            <td>@appointment.Purpose</td>
+                            <td>@appointment.Mode</td>
+                            <td>@appointment.YearSection</td>
+                            <td>@appointment.Notes</td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(appointment.ApprovalRemarks))
+                                {
+                                    <div class="remarks-display">
+                                        @appointment.ApprovalRemarks
+                                    </div>
+                                }
+                                else if (appointment.Status == "Pending")
+                                {
+                                    <textarea class="approval-remarks"
+                                              id="remarks_@appointment.AppointmentID"
+                                              placeholder="Enter remarks for student..."></textarea>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">-</span>
+                                }
+                            </td>
+                            <td>
+                                <span class="status-badge @appointment.Status.ToLower()">@appointment.Status</span>
+                            </td>
+                            <td>
+                                @if (appointment.Status == "Pending")
+                                {
+                                    <div class="approval-buttons">
+                                        <button class="action-btn approve-btn"
+                                                onclick="updateAppointmentWithRemarks(@appointment.AppointmentID, 'Approved', 'remarks_@appointment.AppointmentID')">
+                                            Approve
+                                        </button>
+                                        <button class="action-btn decline-btn"
+                                                onclick="updateAppointment(@appointment.AppointmentID, 'Declined')">
+                                            Decline
+                                        </button>
+                                    </div>
+                                }
+                                else if (appointment.Status == "Approved")
+                                {
+                                    <div class="approval-buttons">
+                                        <button class="action-btn complete-btn"
+                                                onclick="updateAppointment(@appointment.AppointmentID, 'Completed')">
+                                            Complete
+                                        </button>
+                                        <button class="action-btn cancel-btn"
+                                                onclick="updateAppointmentWithRemarks(@appointment.AppointmentID, 'Cancelled', 'remarks_@appointment.AppointmentID')">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="no-actions">-</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No appointments found.</p>
+        }
+    </div>
+
+ 
+
+    <script>
+        function updateAppointmentWithRemarks(appointmentId, status, remarksId) {
+            const remarks = document.getElementById(remarksId)?.value || '';
+
+            const formData = new FormData();
+            formData.append('appointmentId', appointmentId);
+            formData.append('status', status);
+            formData.append('remarks', remarks);
+
+            fetch('?handler=UpdateAppointment', {
+                method: 'POST',
+                headers: {
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                },
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text) });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    alert('Appointment ' + status.toLowerCase() + ' successfully!');
+                    location.reload();
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while updating the appointment.');
+            });
+        }
+
+        function updateAppointment(appointmentId, status) {
+            const formData = new FormData();
+            formData.append('appointmentId', appointmentId);
+            formData.append('status', status);
+
+            fetch('?handler=UpdateAppointment', {
+                method: 'POST',
+                headers: {
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                },
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text) });
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    alert('Appointment ' + status.toLowerCase() + ' successfully!');
+                    location.reload();
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while updating the appointment.');
+            });
+        }
+    </script>
+    @Html.AntiForgeryToken()
+</body>
+</html>

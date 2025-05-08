@@ -1,9 +1,18 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using WebBookingApp.Pages;
+using WebBookingApp.Services;
+using static WebBookingApp.Pages.setAvailabilitymodel;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
+
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Add this line where you configure services
+builder.Services.AddHostedService<AvailabilityCleanupService>();
 
 // ✅ Add Authentication Service
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -18,12 +27,10 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error");
-    app.UseHsts();
-}
+
+
+app.UseDeveloperExceptionPage();
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -34,5 +41,11 @@ app.UseAuthentication(); // ✅ Ensure it's before Authorization
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/Login");
+    return Task.CompletedTask;
+});
 
 app.Run();

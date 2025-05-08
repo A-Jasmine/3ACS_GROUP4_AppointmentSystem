@@ -1,0 +1,223 @@
+﻿@page "{id?}"
+@model WebBookingApp.Pages.editStudentProfileModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student Profile</title>
+    <link rel="stylesheet" href="~/css/editStudentProfile.css">
+    <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="profile">
+            <img id="profileImage"
+                 src="/dashboardAdmin?handler=ProfilePicture&t=@DateTime.Now.Ticks"
+                 alt="Profile Picture"
+                 onclick="openUploadModal()">
+            <div class="profile-info">
+                <h2>Mark Zarks</h2>
+                <h3>Administrator</h3>
+            </div>
+        </div>
+
+        <ul>
+            <p class="menu-text">Menu</p>
+            <li><a asp-page="/dashboardAdmin"><i class="fas fa-tachometer-alt"></i> Home</a></li>
+            <!-- Students Dropdown -->
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-user-plus"></i> Students <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a asp-page="/manageStudents"><i class="fas fa-users"></i> View Student</a></li>
+                    <li><a asp-page="/manageRegistration"><i class="fas fa-user-plus"></i> Manage Registration</a></li>
+                </ul>
+            </li>
+            <!-- Manage Employees Dropdown -->
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-user-cog"></i> Employees  <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a asp-page="/addEmployee"><i class="fas fa-user-plus"></i> Add Employee</a></li>
+                    <li><a asp-page="/viewEmployee"><i class="fas fa-address-book"></i> View Employee</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <a href="#" class="logout" onclick="showLogoutModal()">
+            <i class="fas fa-sign-out-alt"></i> Log out
+        </a>
+    </div>
+
+    <div class="main-content">
+        <form method="post" asp-page-handler="Save">
+            <!-- Personal Information Tab -->
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label asp-for="SelectedStudent.FirstName">First Name</label>
+                        <input type="text" asp-for="SelectedStudent.FirstName" required />
+                    </div>
+                    <div class="form-field">
+                        <label asp-for="SelectedStudent.LastName">Last Name</label>
+                        <input type="text" asp-for="SelectedStudent.LastName" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label asp-for="SelectedStudent.MiddleName">Middle Name</label>
+                        <input type="text" asp-for="SelectedStudent.MiddleName" />
+                    </div>
+                    <div class="form-field">
+                        <label asp-for="SelectedStudent.MobileNumber">Contact Number</label>
+                        <input type="text" asp-for="SelectedStudent.MobileNumber" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label asp-for="SelectedStudent.Email">Email</label>
+                        <input type="email" asp-for="SelectedStudent.Email" readonly />
+                    </div>
+                    <div class="form-field">
+                        <label asp-for="SelectedStudent.Program">Program</label>
+                        <input type="text" asp-for="SelectedStudent.Program" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label asp-for="SelectedStudent.YearLevel">Year Level</label>
+                        <select asp-for="SelectedStudent.YearLevel" class="form-control">
+                            <option value="">Select Year</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Organization Tab -->
+            <div class="form-section">
+                <h3>Student Organization</h3>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="studentOrg">Select Organization</label>
+                        <select id="studentOrg" asp-for="StudentOrg" onchange="updateRoles()" required>
+                            <option value="None" selected="@((Model.StudentOrg == "None") ? "selected" : "")">None</option>
+                            <option value="BEST-CS" selected="@((Model.StudentOrg == "BEST-CS") ? "selected" : "")">BEST-CS</option>
+                            <option value="robotcu" selected="@((Model.StudentOrg == "robotcu") ? "selected" : "")">ROBOTCU</option>
+                            <option value="css" selected="@((Model.StudentOrg == "css") ? "selected" : "")">CSS</option>
+                            <option value="ict-sf" selected="@((Model.StudentOrg == "ict-sf") ? "selected" : "")">ICT-SF</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label asp-for="SelectedStudent.JoinedAt">Joining Date</label>
+                        <input type="date" asp-for="SelectedStudent.JoinedAt" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label asp-for="SelectedStudent.Role">Role</label>
+                        <select asp-for="SelectedStudent.Role" id="roleSelect" required>
+                            <option value="Student" selected="@(Model.SelectedStudent.Role == "Student" ? "selected" : null)">Student</option>
+                            <option value="Alumni" selected="@(Model.SelectedStudent.Role == "Alumni" ? "selected" : null)">Alumni</option>
+                        </select>
+                    </div>
+                </div>
+
+             
+
+            <input type="hidden" asp-for="SelectedStudent.StudentId" />
+
+            <div class="form-row">
+                <button type="submit" class="btn-submit">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+                    function updateRoles() {
+            const org = document.getElementById("studentOrg").value;
+            const roleSelect = document.getElementById("orgRoleSelect");
+            roleSelect.innerHTML = ""; // Clear previous options
+
+            let roles = [];
+            if (org === "BEST-CS" || org === "robotcu" || org === "css") {
+                roles = ["President", "VP-Internal", "VIP-External", "General Secretary", "Deputy Secretary", "Treasurer", "Auditor", "Public Information Officer"];
+            } else if (org === "ict-sf") {
+                roles = ["Student Director", "Deputy Director Internal", "Deputy Director External", "General Secretary", "Deputy Secretary", "Treasurer", "Auditor", "Public Relations Officer"];
+            } else if (org === "None") {
+                // No organization roles when None is selected
+                roles = [];
+            }
+
+            // Add default option first
+            const defaultOption = document.createElement("option");
+            defaultOption.value = "";
+            defaultOption.text = "Select a Role";
+            defaultOption.disabled = true;
+            roleSelect.appendChild(defaultOption);
+
+            // Add other roles
+            roles.forEach(role => {
+                const option = document.createElement("option");
+                option.value = role;
+                option.text = role;
+                roleSelect.appendChild(option);
+            });
+
+            // Set the selected role from model
+            const selectedRole = "@Model.RoleFromOrg";
+            if (selectedRole) {
+                roleSelect.value = selectedRole;
+            }
+        }
+
+        window.onload = function () {
+            const selectedOrg = "@Model.SelectedStudent?.StudentOrg";
+            document.getElementById("studentOrg").value = selectedOrg || "None";
+            updateRoles();
+        };
+    </script>
+
+    <!-- Upload Profile Picture Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Upload Profile Picture</h2>
+            <form id="uploadForm" method="post" enctype="multipart/form-data" asp-page-handler="UploadPicture">
+                <input type="file" name="UploadedFile" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+
+            <p id="uploadMessage"></p>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to log out?</p>
+            <div class="modal-buttons">
+                <button class="logout-btn" onclick="confirmLogout()">Yes</button>
+                <button class="cancel-btn" onclick="hideLogoutModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Logout Form -->
+    <form id="logoutForm" method="post" asp-page-handler="Logout"></form>
+
+</body>
+</html>

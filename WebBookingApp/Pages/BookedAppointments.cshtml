@@ -23,20 +23,56 @@
                  alt="Profile Picture"
                  onclick="openUploadModal()">
             <div class="profile-info">
-                <h3>@Model.FirstName @Model.LastName</h3>
+                <h2>@Model.FirstName @Model.LastName</h2>
 
+                @if (Model.Role == "Student"
+                && !string.IsNullOrWhiteSpace(Model.StudentOrganizationName)
+                && !string.IsNullOrWhiteSpace(Model.StudentOrgRole)
+                && Model.StudentOrganizationName != "N/A"
+                && Model.StudentOrgRole != "N/A")
+                {
+                    <h3>@Model.StudentOrganizationName.ToUpper() @Model.StudentOrgRole</h3>
+                }
+                else
+                {
+                    <h3>@Model.Role</h3>
+                }
             </div>
         </div>
 
         <ul>
-
-            <!-- ✅ Added "Menu" Text -->
             <p class="menu-text">Menu</p>
-
-            <li><a asp-page="/dashboardStudent"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a asp-page="/dashboardStudent"><i class="fas fa-tachometer-alt"></i> Home</a></li>
             <li><a asp-page="/BookedAppointments"><i class="fas fa-calendar-check"></i> Booked Appointments</a></li>
             <li><a asp-page="/makeAppointment"><i class="fas fa-plus-circle"></i> Make Appointment</a></li>
+
+            @if (Model.Role == "Alumni")
+            {
+                <li><a asp-page="/AlumniAppointments"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
+                <li><a asp-page="/SetAvailabilityAlumni"><i class="fas fa-calendar-alt"></i> Set Availability</a></li>
+            }
+            else if (Model.Role == "StudentOrgMember" || (!string.IsNullOrEmpty(Model.StudentOrgRole) && Model.StudentOrgRole != "N/A"))
+            {
+                <li><a asp-page="/StudentOrgAppointments"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
+                <li><a asp-page="/SetAvailabilityStudentOrg"><i class="fas fa-calendar-alt"></i> Set Availability</a></li>
+            }
+
+            <!-- Settings Menu Item -->
+            @if (Model.Role == "Student" && string.IsNullOrEmpty(Model.StudentOrgRole))
+            {
+                <li><a asp-page="/StudentSettings"><i class="fas fa-cog"></i> Settings</a></li>
+            }
+            else if (Model.Role == "StudentOrgMember" || Model.Role == "StudentOrganizationMember" ||
+            (!string.IsNullOrEmpty(Model.StudentOrgRole) && Model.StudentOrgRole != "N/A"))
+            {
+                <li><a asp-page="/OrgSettings"><i class="fas fa-cog"></i> Settings</a></li>
+            }
+            else if (Model.Role == "Alumni")
+            {
+                <li><a asp-page="/AlumniSettings"><i class="fas fa-cog"></i> Settings</a></li>
+            }
         </ul>
+
 
         <a href="#" class="logout" onclick="showLogoutModal()">
             <i class="fas fa-sign-out-alt"></i> Log out
@@ -44,13 +80,16 @@
     </div>
 
     <div class="main-content">
-        <h1>Your Appointments</h1>
+        <h1>YOUR APPOINTMENTS</h1>
+
+      
 
         <div class="appointments-container">
-            <table class="appointments-table">
+            <table class="appointments-table" id="appointmentsTable">
                 <thead>
                     <tr>
-                        <th>Professor</th>
+                        <th>Type</th>
+                        <th>With</th>
                         <th>Date</th>
                         <th>Time</th>
                         <th>Purpose</th>
@@ -60,37 +99,75 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.Appointments.Any())
+                    <!-- Faculty Appointments -->
+                    @foreach (var appointment in Model.FacultyAppointments)
                     {
-                        foreach (var appointment in Model.Appointments)
-                        {
-                            <tr>
-                                <td>
-                                    <div class="professor-info">
-                                        <img class="professor-img" src="@appointment.ProfessorPicture" alt="Professor Picture">
-                                        <span>@appointment.ProfessorName</span>
-                                    </div>
-                                </td>
-                                <td>@appointment.AppointmentDate.ToString("yyyy-MM-dd")</td>
-                                <td>@appointment.FormattedAppointmentTime</td>
-                                <td>@appointment.Purpose</td>
-                                <td>@appointment.Mode</td> <!-- ✅ Show Mode -->
-                                <td>@appointment.AdditionalNotes</td> <!-- ✅ Show Additional Notes -->
-                                <td class="status @appointment.Status.ToLower()">@appointment.Status</td>
-                            </tr>
-                        }
+                        <tr class="appointment-row" data-type="faculty">
+                            <td>Faculty</td>
+                            <td>
+                                <div class="professor-info">
+                                    <img class="professor-img" src="@appointment.ProfessorProfilePicture" alt="Professor Picture">
+                                    <span>@appointment.ProfessorName</span>
+                                </div>
+                            </td>
+                            <td>@appointment.AppointmentDate.ToString("yyyy-MM-dd")</td>
+                            <td>@appointment.FormattedAppointmentTime</td>
+                            <td>@appointment.Purpose</td>
+                            <td>@appointment.Mode</td>
+                            <td>@appointment.AdditionalNotes</td>
+                            <td class="status @appointment.Status.ToLower()">@appointment.Status</td>
+                        </tr>
                     }
-                    else
+
+                    <!-- Student Organization Appointments -->
+                    @foreach (var appointment in Model.OrganizationAppointments)
+                    {
+                        <tr class="appointment-row" data-type="org">
+                            <td>Organization</td>
+                            <td>
+                                <div class="professor-info">
+                                    <img class="professor-img" src="@appointment.OrganizationMemberProfilePicture" alt="Organization Member Picture">
+                                    <span>@appointment.OrganizationMemberName</span>
+                                </div>
+                            </td>
+                            <td>@appointment.AppointmentDate.ToString("yyyy-MM-dd")</td>
+                            <td>@appointment.FormattedAppointmentTime</td>
+                            <td>@appointment.Purpose</td>
+                            <td>@appointment.Mode</td>
+                            <td>@appointment.AdditionalNotes</td>
+                            <td class="status @appointment.Status.ToLower()">@appointment.Status</td>
+                        </tr>
+                    }
+
+                    <!-- Alumni Appointments -->
+                    @foreach (var appointment in Model.AlumniAppointments)
+                    {
+                        <tr class="appointment-row" data-type="alumni">
+                            <td>Alumni</td>
+                            <td>
+                                <div class="professor-info">
+                                    <img class="professor-img" src="@appointment.AlumniProfilePicture" alt="Alumni Picture">
+                                    <span>@appointment.AlumniName</span>
+                                </div>
+                            </td>
+                            <td>@appointment.AppointmentDate.ToString("yyyy-MM-dd")</td>
+                            <td>@appointment.FormattedAppointmentTime</td>
+                            <td>@appointment.Purpose</td>
+                            <td>@appointment.Mode</td>
+                            <td>@appointment.AdditionalNotes</td>
+                            <td class="status @appointment.Status.ToLower()">@appointment.Status</td>
+                        </tr>
+                    }
+
+                    @if (!Model.FacultyAppointments.Any() && !Model.OrganizationAppointments.Any() && !Model.AlumniAppointments.Any())
                     {
                         <tr>
-                            <td colspan="5">No booked appointments found.</td>
+                            <td colspan="8">No booked appointments found.</td>
                         </tr>
                     }
                 </tbody>
-
             </table>
         </div>
-
     </div>
 
 
@@ -122,6 +199,9 @@
 
     <!-- ✅ Hidden Logout Form -->
     <form id="logoutForm" method="post" asp-page-handler="Logout"></form>
+
+
+
 
     <script src="~/js/dashboardAdmin.js"></script>
 </body>

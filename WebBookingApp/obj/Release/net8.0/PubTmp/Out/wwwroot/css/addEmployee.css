@@ -1,0 +1,412 @@
+﻿/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Layout */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #fbebfb; /* Lightest background */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: #57105a; /* Deep violet */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the image and text */
+    padding: 10px 20px; /* Ensures proper spacing */
+    justify-content: flex-start; /* Aligns content to the left */
+    width: 100%;
+}
+
+    /* Profile Image */
+    .profile img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid white;
+        cursor: pointer;
+    }
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+}
+
+    .profile-info h2 {
+        font-size: 14px;
+        margin: 0;
+        color: white;
+        white-space: nowrap;
+    }
+
+    .profile-info h3 {
+        font-size: 14px;
+        margin: 0;
+        color: #fbebfb;
+        font-weight: normal;
+    }
+
+/* Fixes alignment for "Menu" text */
+.menu-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 15px 0 5px 20px; /* Aligns to the left */
+}
+
+.profile button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #c71db6; /* Vibrant magenta */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+    .profile button:hover {
+        background-color: #ab1c94; /* Darker magenta on hover */
+    }
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+    padding: 10px 0;
+}
+
+    .sidebar ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+        .sidebar ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+            .sidebar ul li a i {
+                margin-right: 12px;
+                font-size: 18px;
+            }
+
+            /* Hover & Active Effects */
+            .sidebar ul li a:hover, .sidebar ul li .active {
+                background: white;
+                color: #57105a; /* Deep violet */
+                font-weight: 600;
+            }
+
+/* Logout Button - Fixed at the Bottom */
+.logout {
+    display: flex;
+    width: 100%;
+    background: #57105a; /* Deep violet */
+    color: white;
+    text-align: left;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 20px;
+    text-decoration: none;
+    gap: 10px;
+}
+
+    .logout:hover {
+        background: white;
+        color: #57105a; /* Deep violet */
+        font-weight: 600;
+    }
+
+.modal {
+    display: none; /* ✅ Ensures modal is hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+    .modal-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* spacing between the file input and the button */
+        width: 100%;
+    }
+
+        .modal-content form input[type="file"] {
+            width: 100%;
+            margin: 15px 0;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        .modal-content form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #57105a; /* Deep violet */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: -20px;
+        }
+
+            .modal-content form button:hover {
+                background-color: #450b4a; /* Darker deep violet on hover */
+            }
+
+.logout-btn, .cancel-btn {
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 48%;
+    transition: 0.2s ease;
+    margin-top: 20px;
+}
+
+.logout-btn {
+    background-color: #57105a; /* Deep violet */
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: black;
+}
+
+.logout-btn:hover {
+    background-color: #450b4a; /* Darker deep violet on hover */
+}
+
+.cancel-btn:hover {
+    background-color: #aaa;
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    margin-bottom: -2px; /* Add some space between the list items */
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ensures full width */
+}
+
+.dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+    display: none;
+    position: static; /* Prevent overflow, display as block */
+    background-color: #57105a; /* Deep violet */
+    width: 100%; /* Ensures it stays within sidebar */
+    border-radius: 4px;
+    box-shadow: none; /* Remove shadow for sidebar */
+    margin-top: 0px;
+    padding-left: -20px; /* Indent dropdown items */
+}
+
+    /* Dropdown Item Styles */
+    .dropdown-content a {
+        color: #606060;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 5px;
+    }
+
+        /* Hover effect for dropdown links */
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
+        }
+
+    /* Show dropdown when class is active */
+    .dropdown-content.show {
+        display: block;
+    }
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Add space between the caret and the text */
+.fa-caret-down {
+    margin-left: 6px;
+}
+
+/* Additional Hover Effect for Dropdown Toggle */
+.dropdown-toggle:hover {
+    background-color: #c71db6; /* Vibrant magenta */
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 260px;
+    font-family: 'Arial', sans-serif;
+    background-color: #fbebfb; /* Lightest background */
+    border-radius: 10px; /* Rounded corners for the main content */
+}
+
+    .main-content h3 {
+        color: #57105a; /* Deep violet */
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+/* Form Section Styling */
+.form-section {
+    margin-bottom: 40px;
+    background-color: #ffffff; /* White background for form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for form */
+}
+
+/* Form Row - Flex for 2 columns */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between columns */
+    margin-bottom: 20px;
+}
+
+/* Form Field */
+.form-field {
+    width: 48%; /* Ensures two inputs per row, adjusting width */
+    position: relative; /* Positioning for labels */
+}
+
+/* Form Field Styling */
+.form-row label {
+    display: block;
+    font-weight: bold;
+    color: #5f6368;
+    margin-bottom: 8px; /* Space between label and input */
+    font-size: 14px;
+}
+
+/* Input Fields - Make sure they are in two columns */
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 100%; /* Takes up full width of form-field */
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+    background-color: #f9f9f9; /* Light background color for inputs */
+    transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+        border-color: #57105a; /* Deep violet border on focus */
+        outline: none; /* Remove outline on focus */
+    }
+
+/* Adjustments for Textarea */
+.form-row textarea {
+    height: 100px; /* Increased height for better appearance */
+    resize: none; /* Disable resizing for address field */
+}
+
+/* Address Field - Adjust size to match other fields */
+.form-row .form-field.address {
+    width: 100%; /* Full width for address field */
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    background-color: #50ef06;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Button animations */
+}
+
+    button:hover {
+        transform: scale(1.05); /* Slight scaling effect on hover */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adding shadow on hover */
+    }
+
+/* Submit Button */
+.btn-submit {
+    width: 25%; /* Adjust the width for the submit button */
+    background-color: #57105a; /* Deep violet for submit button */
+    box-shadow: 0 4px 6px rgba(87, 16, 90, 0.2); /* Soft shadow */
+}
+
+    .btn-submit:hover {
+        background-color: #450b4a; /* Darker deep violet on hover */
+        box-shadow: 0 6px 10px rgba(87, 16, 90, 0.3); /* Darker shadow on hover */
+    }

@@ -1,0 +1,602 @@
+﻿/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Layout */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #fbebfb;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: #57105a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the image and text */
+    padding: 10px 20px; /* Ensures proper spacing */
+    justify-content: flex-start; /* Aligns content to the left */
+    width: 100%;
+}
+
+    /* Profile Image */
+    .profile img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid white;
+        cursor: pointer;
+    }
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+}
+
+    .profile-info h2 {
+        font-size: 14px;
+        margin: 0;
+        color: white;
+        white-space: nowrap;
+    }
+
+    .profile-info h3 {
+        font-size: 14px;
+        margin: 0;
+        color: #fbebfb;
+        font-weight: normal;
+    }
+.student-name h3 {
+    font-size: 17px; /* Smaller font for role */
+    margin: 0; /* Remove default margin */
+    font-weight: normal;
+}
+
+/* Fixes alignment for "Menu" text */
+.menu-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 15px 0 5px 20px; /* Aligns to the left */
+}
+
+.profile button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+    .profile button:hover {
+        background-color: #2980b9;
+    }
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+    padding: 10px 0;
+}
+
+    .sidebar ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+        .sidebar ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+            .sidebar ul li a i {
+                margin-right: 12px;
+                font-size: 18px;
+            }
+
+            /* Hover & Active Effects */
+            .sidebar ul li a:hover, .sidebar ul li .active {
+                background: white;
+                color: #57105a;
+                font-weight: 600;
+            }
+
+/* Logout Button - Fixed at the Bottom */
+.logout {
+    display: flex;
+    width: 100%;
+    background: #57105a;
+    color: white;
+    text-align: left;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 20px;
+    text-decoration: none;
+    gap: 10px;
+}
+
+    .logout:hover {
+        background: white;
+        color: #57105a;
+        font-weight: 600;
+    }
+
+.modal {
+    display: none; /* ✅ Ensures modal is hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+    .modal-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* spacing between the file input and the button */
+        width: 100%;
+    }
+
+        .modal-content form input[type="file"] {
+            width: 100%;
+            margin: 15px 0;
+            padding: 8px;
+            margin-top: -10px;
+        }
+
+        .modal-content form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #57105a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: -20px;
+        }
+
+            .modal-content form button:hover {
+                background-color: #c71db6;
+            }
+
+.logout-btn, .cancel-btn {
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 48%;
+    transition: 0.2s ease;
+    margin-top: 20px;
+}
+
+.logout-btn {
+    background-color: #57105a;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: black;
+}
+
+.logout-btn:hover {
+    background-color: #c71db6;
+}
+
+.cancel-btn:hover {
+    background-color: #aaa;
+}
+
+/* 🔴 Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 230px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .main-content h1 {
+        color: #c71db6;
+        font-size: 32px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        line-height: 1.3;
+        position: relative;
+    }
+
+        /* Optional: Underline accent */
+        .main-content h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #c71db6;
+            margin-top: 8px;
+            border-radius: 1px;
+        }
+
+/* Animation Keyframes */
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Alert Messages - Base Style */
+.alert {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+/* Success Alert (can remain green for clarity) */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Error Alert */
+.alert-error {
+    background-color: #ffe5e5;
+    color: #a94442;
+    border: 1px solid #f5c2c7;
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(179, 0, 0, 0.1);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+    .appointments-table th {
+        background-color: #fbebfb; /* lightest background */
+        padding: 12px 15px;
+        text-align: left;
+        font-weight: 600;
+        color: #800000;
+        border-bottom: 2px solid #e4bcbc;
+    }
+
+    .appointments-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #e4bcbc;
+        vertical-align: middle;
+    }
+
+    .appointments-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .appointments-table tr:hover {
+        background-color: #ffeaea;
+    }
+
+/* Specific Cell Styles */
+.booker-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.booker-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 5px;
+    object-fit: cover;
+    border: 2px solid #e60000;
+}
+
+.notes-cell {
+    max-width: 200px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.approval-remark {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 50px;
+    font-family: inherit;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    gap: 8px; /* spacing between buttons */
+    align-items: stretch; /* make buttons same width */
+}
+
+.btn-approve, .btn-decline {
+    padding: 6px 12px; /* Reduced padding */
+    border: none;
+    border-radius: 6px; /* Reduced border radius */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px; /* Reduced font size */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+}
+
+.btn-approve {
+    background-color: #9fd954;
+    color: white;
+}
+
+    .btn-approve:hover {
+        background-color: #69b53b;
+    }
+
+.btn-decline {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+    .btn-decline:hover {
+        background-color: #b71c1c;
+    }
+
+/* No Appointments Message */
+.no-appointments {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff0f0;
+    border-radius: 8px;
+    color: #aa0000;
+    opacity: 0;
+    transform: scale(0.95);
+    animation-name: fadeZoomIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* Compact and Colored Status Badges */
+.status-badge {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    min-width: 70px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    line-height: 1.4;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+    /* Status Variants with richer colors */
+    .status-badge.Pending {
+        background-color: #ffe8b3;
+        color: #a06500;
+        border: 1px solid #ffc107;
+    }
+
+    .status-badge.Approved {
+        background-color: #b6f7c1;
+        color: #116530;
+        border: 1px solid #28a745;
+    }
+
+    .status-badge.Declined {
+        background-color: #ffc7cc;
+        color: #861c24;
+        border: 1px solid #dc3545;
+    }
+
+.filter-container {
+    margin: 20px 0;
+    padding: 15px;
+    margin-top: -10px;
+}
+
+.status-filter {
+    margin-bottom: -23px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+    .status-filter label {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .status-filter select {
+        padding: 8px 12px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .status-filter select:hover {
+            border-color: #aaa;
+        }
+
+        .status-filter select:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+
+.btn-complete {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+    .btn-complete:hover {
+        background-color: #218838;
+    }
+
+    .btn-complete i {
+        margin-right: 5px;
+    }
+
+@keyframes fadeZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Table */
+@media (max-width: 1200px) {
+    .appointments-table {
+        display: block;
+    }
+
+        .appointments-table thead {
+            display: none;
+        }
+
+        .appointments-table tr {
+            display: block;
+            margin-bottom: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+        }
+
+        .appointments-table td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+            .appointments-table td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                margin-right: 10px;
+                flex: 1;
+            }
+
+            .appointments-table td .approval-remark {
+                flex: 2;
+            }
+
+    .action-buttons {
+        justify-content: flex-end;
+    }
+
+    .booker-cell {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+}
+
+/* Upload Form Styles */
+.upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}

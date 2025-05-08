@@ -1,0 +1,203 @@
+﻿@page
+@model WebBookingApp.Pages.StudentOrgAppointmentsModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Organization Pending Appointments</title>
+    <link rel="stylesheet" href="~/css/StudentOrgAppointments.css">
+    <script src="https://kit.fontawesome.com/0cc051477a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <img id="profileImage"
+                 src="/dashboardStudent?handler=ProfilePicture&t=@DateTime.Now.Ticks"
+                 alt="Profile Picture"
+                 onclick="openUploadModal()" />
+            <div class="profile-info">
+                <h2>@Model.FirstName @Model.LastName</h2>
+                <h3>@Model.StudentOrganizationName.ToUpper() @Model.StudentOrgRole</h3>
+            </div>
+        </div>
+
+        <ul>
+            <p class="menu-text">Menu</p>
+            <li><a asp-page="/dashboardStudent"><i class="fas fa-tachometer-alt"></i> Home</a></li>
+            <li><a asp-page="/BookedAppointments"><i class="fas fa-calendar-check"></i> Booked Appointments</a></li>
+            <li><a asp-page="/makeAppointment"><i class="fas fa-plus-circle"></i> Make Appointment</a></li>
+
+            @if (Model.Role == "Alumni")
+            {
+                <li><a asp-page="/AlumniAppointments"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
+                <li><a asp-page="/SetAvailabilityAlumni"><i class="fas fa-calendar-alt"></i> Set Availability</a></li>
+            }
+            else if (Model.Role == "StudentOrgMember" || (!string.IsNullOrEmpty(Model.StudentOrgRole) && Model.StudentOrgRole != "N/A"))
+            {
+                <li><a asp-page="/StudentOrgAppointments"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
+                <li><a asp-page="/SetAvailabilityStudentOrg"><i class="fas fa-calendar-alt"></i> Set Availability</a></li>
+            }
+
+            <!-- Settings Menu Item -->
+            @if (Model.Role == "Student" && string.IsNullOrEmpty(Model.StudentOrgRole))
+            {
+                <li><a asp-page="/StudentSettings"><i class="fas fa-cog"></i> Settings</a></li>
+            }
+            else if (Model.Role == "StudentOrgMember" || Model.Role == "StudentOrganizationMember" ||
+            (!string.IsNullOrEmpty(Model.StudentOrgRole) && Model.StudentOrgRole != "N/A"))
+            {
+                <li><a asp-page="/OrgSettings"><i class="fas fa-cog"></i> Settings</a></li>
+            }
+        </ul>
+
+        <a href="#" class="logout" onclick="showLogoutModal()">
+            <i class="fas fa-sign-out-alt"></i> Log out
+        </a>
+    </div>
+
+    <div class="main-content">
+        <h1>PENDING APPOINTMENTS</h1>
+
+        <div class="filter-container">
+            <form method="get" class="status-filter">
+                <label for="statusFilter">Filter by:</label>
+                <select id="statusFilter" name="statusFilter" onchange="this.form.submit()">
+                    <option value="All" selected="@(Model.StatusFilter == "All")">All Appointments</option>
+                    <option value="Pending" selected="@(Model.StatusFilter == "Pending")">Pending</option>
+                    <option value="Approved" selected="@(Model.StatusFilter == "Approved")">Approved</option>
+                    <option value="Completed" selected="@(Model.StatusFilter == "Completed")">Completed</option>
+                    <option value="Declined" selected="@(Model.StatusFilter == "Declined")">Declined</option>
+                    <option value="Cancelled" selected="@(Model.StatusFilter == "Cancelled")">Cancelled</option>
+                </select>
+            </form>
+        </div>
+
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Message"]
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-error">
+                @TempData["Error"]
+            </div>
+        }
+
+        @if (Model.OrganizationPendingAppointments.Count == 0)
+        {
+            <div class="no-appointments">
+                <p>No appointments found.</p>
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="appointments-table">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>DATE</th>
+                            <th>TIME</th>
+                            <th>PURPOSE</th>
+                            <th>MODE</th>
+                            <th>YEAR/SECTION</th>
+                            <th>NOTES</th>
+                            <th>APPROVAL REMARK</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var appointment in Model.OrganizationPendingAppointments)
+                        {
+                            <tr>
+                                <td class="booker-cell">
+                                    <img src="@appointment.BookerProfilePicture" alt="Booker" class="booker-avatar" />
+                                    <span>@appointment.BookerName</span>
+                                </td>
+                                <td nowrap>@appointment.AppointmentDate.ToString("MMM dd, yyyy")</td>
+                                <td nowrap>@appointment.FormattedAppointmentTime</td>
+                                <td>@appointment.Purpose</td>
+                                <td>@appointment.Mode</td>
+                                <td>@appointment.YearSection</td>
+                                <td class="notes-cell">@appointment.AdditionalNotes</td>
+                                <td>
+                                    <textarea name="approvalRemark" form="form-@appointment.AppointmentID"
+                                              class="approval-remark" placeholder="Enter remarks (optional)"></textarea>
+                                </td>
+                                <td>
+                                    <span class="status-badge status-@appointment.Status.ToLower()">
+                                        @appointment.Status
+                                    </span>
+                                </td>
+                                <td class="actions-cell">
+                                    <form method="post" id="form-@appointment.AppointmentID">
+                                        <input type="hidden" name="appointmentId" value="@appointment.AppointmentID" />
+                                        <div class="action-buttons">
+                                            @if (appointment.Status == "Pending")
+                                            {
+                                                <button type="submit" asp-page-handler="Approve" class="btn-approve">
+                                                    <i class="fas fa-check"></i> Approve
+                                                </button>
+                                                <button type="submit" asp-page-handler="Decline" class="btn-decline">
+                                                    <i class="fas fa-times"></i> Decline
+                                                </button>
+                                            }
+                                            else if (appointment.Status == "Approved")
+                                            {
+                                                <button type="submit" asp-page-handler="Complete" class="btn-complete">
+                                                    Complete
+                                                </button>
+                                                <button type="submit" asp-page-handler="Cancel" class="btn-cancel">
+                                                    <i class="fas fa-times"></i> Cancel
+                                                </button>
+                                            }
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+
+
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Upload Profile Picture</h2>
+            <form id="uploadForm" method="post" enctype="multipart/form-data" asp-page-handler="UploadPicture">
+                <input type="file" name="UploadedFile" accept="image/*" required />
+                <button type="submit">Upload</button>
+            </form>
+            <p id="uploadMessage"></p>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to log out?</p>
+            <div class="modal-buttons">
+                <button class="logout-btn" onclick="confirmLogout()">Yes</button>
+                <button class="cancel-btn" onclick="hideLogoutModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <form id="logoutForm" method="post" asp-page-handler="Logout"></form>
+
+    <script src="~/js/dashboardStudent.js"></script>
+</body>
+</html>

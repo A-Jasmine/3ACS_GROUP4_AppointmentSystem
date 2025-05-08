@@ -14,7 +14,7 @@ namespace WebBookingApp.Pages
     public class manageStudentsModel : PageModel
     {
         private readonly ILogger<manageStudentsModel> _logger;
-        private readonly string connString = "Server=MELON\\SQL2022;Database=BOOKING_DB;Trusted_Connection=True;";
+        private readonly string _connString;
 
         [BindProperty(SupportsGet = true)]
         public string? SelectedRole { get; set; }
@@ -29,7 +29,11 @@ namespace WebBookingApp.Pages
         [BindProperty(SupportsGet = true)]
         public string? SelectedYearLevel { get; set; }
 
-        public manageStudentsModel(ILogger<manageStudentsModel> logger) => _logger = logger;
+        public manageStudentsModel(ILogger<manageStudentsModel> logger, IConfiguration configuration)
+        {
+            _logger = logger;
+            _connString = configuration.GetConnectionString("DefaultConnection");
+        }
 
         public void OnGet()
         {
@@ -37,7 +41,7 @@ namespace WebBookingApp.Pages
 
             string userEmail = User.FindFirst(ClaimTypes.Email)?.Value ?? "admin";
 
-            using SqlConnection conn = new(connString);
+            using SqlConnection conn = new(_connString);
             conn.Open();
 
             // Fetch admin profile data
@@ -65,18 +69,49 @@ namespace WebBookingApp.Pages
                 }
             }
 
-            // 🔄 Fetch students & alumni based on `SelectedRole`
-            if (SelectedRole == "Alumni")
+            // Determine appropriate query based on SelectedRole and SelectedYearLevel
+            if (!string.IsNullOrEmpty(SelectedYearLevel) && SelectedRole != "Alumni")
             {
                 query = @"
             SELECT 
-                alumni_id AS student_id, 
+                student_id, 
+                NULL AS alumni_id, 
                 first_name, 
                 middle_name, 
                 last_name, 
                 email, 
                 mobile_number, 
-                department, 
+                program, 
+                YearLevel, 
+                'Student' AS role 
+            FROM dbo.userStudents 
+            WHERE YearLevel = @YearLevel
+            UNION 
+            SELECT 
+                alumni_id AS student_id, 
+                alumni_id AS alumni_id, 
+                first_name, 
+                middle_name, 
+                last_name, 
+                email, 
+                mobile_number, 
+                program, 
+                'N/A' AS YearLevel, 
+                'Alumni' AS role 
+            FROM dbo.userAlumni";
+            }
+            else if (SelectedRole == "Alumni")
+            {
+                query = @"
+            SELECT 
+                alumni_id AS student_id, 
+                alumni_id AS alumni_id, 
+                first_name, 
+                middle_name, 
+                last_name, 
+                email, 
+                mobile_number, 
+                program, 
                 'N/A' AS YearLevel, 
                 'Alumni' AS role 
             FROM dbo.userAlumni";
@@ -86,43 +121,48 @@ namespace WebBookingApp.Pages
                 query = @"
             SELECT 
                 student_id, 
+                NULL AS alumni_id, 
                 first_name, 
                 middle_name, 
                 last_name, 
                 email, 
                 mobile_number, 
-                department, 
+                program, 
                 YearLevel, 
                 'Student' AS role 
             FROM dbo.userStudents";
-
-                if (!string.IsNullOrEmpty(SelectedYearLevel))
-                {
-                    query += " WHERE YearLevel = @YearLevel";
-                }
             }
             else
             {
-                // 🔹 When "All" is selected, combine both tables
                 query = @"
-            SELECT student_id, first_name, middle_name, last_name, email, mobile_number, department, YearLevel, 'Student' AS role 
+            SELECT 
+                student_id, 
+                NULL AS alumni_id, 
+                first_name, 
+                middle_name, 
+                last_name, 
+                email, 
+                mobile_number, 
+                program, 
+                YearLevel, 
+                'Student' AS role 
             FROM dbo.userStudents
             UNION 
-            SELECT alumni_id AS student_id, first_name, middle_name, last_name, email, mobile_number, department, 'N/A' AS YearLevel, 'Alumni' AS role 
+            SELECT 
+                alumni_id AS student_id, 
+                alumni_id AS alumni_id, 
+                first_name, 
+                middle_name, 
+                last_name, 
+                email, 
+                mobile_number, 
+                program, 
+                'N/A' AS YearLevel, 
+                'Alumni' AS role 
             FROM dbo.userAlumni";
-
-                if (!string.IsNullOrEmpty(SelectedYearLevel))
-                {
-                    query = @"
-                SELECT student_id, first_name, middle_name, last_name, email, mobile_number, department, YearLevel, 'Student' AS role 
-                FROM dbo.userStudents 
-                WHERE YearLevel = @YearLevel
-                UNION 
-                SELECT alumni_id AS student_id, first_name, middle_name, last_name, email, mobile_number, department, 'N/A' AS YearLevel, 'Alumni' AS role 
-                FROM dbo.userAlumni";
-                }
             }
 
+            // Fetch combined student/alumni data
             using (SqlCommand cmd = new(query, conn))
             {
                 if (!string.IsNullOrEmpty(SelectedYearLevel) && SelectedRole != "Alumni")
@@ -141,7 +181,7 @@ namespace WebBookingApp.Pages
                         LastName = reader["last_name"].ToString(),
                         Email = reader["email"].ToString(),
                         MobileNumber = reader["mobile_number"].ToString(),
-                        Department = reader["department"].ToString(),
+                        Program = reader["program"].ToString(),
                         YearLevel = reader["YearLevel"].ToString(),
                         Role = reader["role"].ToString()
                     });
@@ -156,6 +196,7 @@ namespace WebBookingApp.Pages
 
 
 
+
         public IActionResult OnGetProfilePicture()
         {
             string userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
@@ -164,7 +205,7 @@ namespace WebBookingApp.Pages
                 userEmail = "admin";
             }
 
-            using SqlConnection conn = new(connString);
+            using SqlConnection conn = new(_connString);
             conn.Open();
 
             byte[]? profileImage = null;
@@ -218,7 +259,7 @@ namespace WebBookingApp.Pages
                     userEmail = "admin";
                 }
 
-                using SqlConnection conn = new(connString);
+                using SqlConnection conn = new(_connString);
                 await conn.OpenAsync();
                 string query = @"
                 MERGE INTO dbo.userPictures AS target
@@ -248,6 +289,49 @@ namespace WebBookingApp.Pages
             }
         }
 
+        public async Task<IActionResult> OnPostDeleteAsync(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                _logger.LogWarning("Delete failed: Student ID is null or empty.");
+                return RedirectToPage(); // Could redirect to an error page
+            }
+
+            using SqlConnection conn = new(_connString);
+            await conn.OpenAsync();
+
+            try
+            {
+                // Try deleting from userStudents first
+                string deleteStudentQuery = "DELETE FROM dbo.userStudents WHERE student_id = @Id";
+                using (SqlCommand cmd = new(deleteStudentQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    int rowsAffected = await cmd.ExecuteNonQueryAsync();
+
+                    // If no rows affected, try deleting from userAlumni
+                    if (rowsAffected == 0)
+                    {
+                        string deleteAlumniQuery = "DELETE FROM dbo.userAlumni WHERE alumni_id = @Id";
+                        using (SqlCommand alumniCmd = new(deleteAlumniQuery, conn))
+                        {
+                            alumniCmd.Parameters.AddWithValue("@Id", id);
+                            await alumniCmd.ExecuteNonQueryAsync();
+                        }
+                    }
+                }
+
+                _logger.LogInformation($"Deleted record with ID: {id}");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error deleting record with ID {id}: {ex.Message}");
+            }
+
+            return RedirectToPage();
+        }
+
+
         public async Task<IActionResult> OnPostLogout()
         {
             await HttpContext.SignOutAsync();
@@ -258,12 +342,13 @@ namespace WebBookingApp.Pages
         public class Student
         {
             public string StudentID { get; set; }
+            public string AlumniID { get; set; }
             public string FirstName { get; set; }
             public string MiddleName { get; set; }
             public string LastName { get; set; }
             public string Email { get; set; }
             public string MobileNumber { get; set; }
-            public string Department { get; set; }
+            public string Program { get; set; }
             public string YearLevel { get; set; }
             public string Role { get; set; }
         }

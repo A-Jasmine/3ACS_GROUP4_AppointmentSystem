@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "InSJ1F2wm7qKCTwhOHHpgnFyG99lH32cTPjxtRe1wrM=",
+  "Hash": "Z1ciynPAUdLNeaL6ubZWxVno4S8fjPHmnyq/ehqvRw8=",
   "Source": "WebBookingApp",
   "BasePath": "_content/WebBookingApp",
   "Mode": "Default",
@@ -59,6 +59,90 @@
       "OriginalItemSpec": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebBookingApp.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\addEmployee.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/addEmployee#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cy5edogv8z",
+      "Integrity": "XJ2qW5d9XW74U81yiaPRyaEjq/Kqt3owgIE7bXC24XI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\addEmployee.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AlumniAppointments.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/AlumniAppointments#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lb731wxy6p",
+      "Integrity": "0fgPbjzYbUZwD2PvFhvTTAgRIPUbVJIx4FZ2LcNfcPY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AlumniAppointments.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AlumniSettings.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/AlumniSettings#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w4dgu2exe2",
+      "Integrity": "gBPvAa4BjommEKTHBSP2MoalHQbdXLJyn1r/divUEqw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AlumniSettings.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AppointmentList.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/AppointmentList#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p4vxnat0v9",
+      "Integrity": "2cq3NCiGTDoLUKocGO+/bOITbrXUrebb0s24E8X7Rns=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AppointmentList.css"
+    },
+    {
       "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\BookedAppointments.css",
       "SourceId": "WebBookingApp",
       "SourceType": "Discovered",
@@ -73,8 +157,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "m94rz17ifi",
-      "Integrity": "phrAAHwEz6yEjYqR1GZnjC2ZMag1FVYKwPYz7XOwvzM=",
+      "Fingerprint": "94aftpgvsm",
+      "Integrity": "+eHar9wWswFncEpHwgAZ2hTj55HJ66BoAYSAVdCadlM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\BookedAppointments.css"
@@ -94,8 +178,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cv2hvt65fv",
-      "Integrity": "OCQotZlUPryAMcueSpMYrNyyiN3g3pKFdera3jtfkRQ=",
+      "Fingerprint": "gcrxmigxz1",
+      "Integrity": "UFnGdeF54u3beKwx3Fja1z+vYPlbNBJvRsFr4uQpAUI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\dashboardAdmin.css"
@@ -115,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "nkhlfva9r3",
-      "Integrity": "N3d3yIl5gAlK5Qx3DZOwwaPBahjvschFU47xquvEeqE=",
+      "Fingerprint": "tz5gy7jnux",
+      "Integrity": "WVClWUoSpJN5iYSX/0nha+2lGk9cLnl0dZxoQsd3zEA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\dashboardProfessor.css"
@@ -136,11 +220,95 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "7f1a4ip8lp",
-      "Integrity": "TT7f3ghuR1Ohh+Y0HRp6esqhWaNpAt0kbguqnTzFHmY=",
+      "Fingerprint": "5g9wvjtw05",
+      "Integrity": "K42jPBrqlvfDo16ugb5qxjZFZZc7+9zVdE9YcNdJqoA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\dashboardStudent.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\EditAlumniProfile.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/EditAlumniProfile#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4y4kviickl",
+      "Integrity": "DH3Kyw4O6dBGtbTvnafvGfZoUjW9Z88UqBAAagmoa7A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\EditAlumniProfile.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\editEmployee.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/editEmployee#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0z3wlyyw53",
+      "Integrity": "5AYsfnLLoS6ZqmJCcHPqISiDZIfUFzbaLfUXqavicLY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\editEmployee.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\editStudentProfile.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/editStudentProfile#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6gsoae02xg",
+      "Integrity": "+pfbx42WTiGp/bOjT2x7CnOdtFrILDjbhbeZOjDf2Ko=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\editStudentProfile.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\InstructorSettings.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/InstructorSettings#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vrd0rq5y1y",
+      "Integrity": "RUcuu95s23iSwyf4H25WkWRjXUhyGr4hhtdWXG2/qBQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\InstructorSettings.css"
     },
     {
       "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\login.css",
@@ -157,8 +325,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ihn2ptxlxk",
-      "Integrity": "ZoBENcU9pG0wiYU4g++SBPfQVkGc1q2UlCOyKvQrSHU=",
+      "Fingerprint": "l3h1rl84k4",
+      "Integrity": "LwSWT5TgtZ7hZy29tnBQVS0k8/1d/rzQediFnUIBsIA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login.css"
@@ -178,8 +346,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "klcev5kben",
-      "Integrity": "SOp9e+mW9jYTqcKSGh60jfakcCo1Mn7OQSxnbP+Wvrc=",
+      "Fingerprint": "il4d6y25vi",
+      "Integrity": "hkYJtwCT3rlqwuEc/+bieHla0Idf5WYOpWw/ocq//AU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\makeAppointment.css"
@@ -199,11 +367,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "y6lkyhktd8",
-      "Integrity": "tpFdO4Lk4KmoZOqE4JDtgzw6pDJ4fd7eOnwd82oyXYE=",
+      "Fingerprint": "q7qo4l58sh",
+      "Integrity": "tuK0BDvBZZVsaIOMOwn2uGl602emO+SlccEL9jvmGLw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\manageAppointment.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageRegistration.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/manageRegistration#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oprle9phyp",
+      "Integrity": "dB5paYQKBbbzLaC2ps//dWow2d9ElVH25PRNIsvlkmk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\manageRegistration.css"
     },
     {
       "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageStudents.css",
@@ -220,11 +409,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vm9e9ko1g9",
-      "Integrity": "uZ5uXxgZVBjnszA4U7+qnswJL891y2mSA5woKlPfDIU=",
+      "Fingerprint": "ncc77aiymg",
+      "Integrity": "R6kcIpWvd99d6qQJUWpXqVUnqq3+7JyocOGhX4at9Ic=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\manageStudents.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\OrgSettings.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/OrgSettings#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ln8153q21m",
+      "Integrity": "7+yxM95eFFHqkQkYoPUXs9zkBEbhja7yuSGqvNhmrik=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\OrgSettings.css"
     },
     {
       "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\setAvailability.css",
@@ -241,11 +451,53 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5xqg06ppgx",
-      "Integrity": "t2ujxWMfBKugBtg4B3IG9Q73Zd6Z0d+tp8AEICpo3zQ=",
+      "Fingerprint": "eklerk2yle",
+      "Integrity": "UjA9HBjLStWUWgKGLXC44qqbPGXakZ94B13OBikmLzI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\setAvailability.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\SetAvailabilityAlumni.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/SetAvailabilityAlumni#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8yxysnxbgz",
+      "Integrity": "oPeqeGHZ4UPxqhL/BKyorkuWs6wcewdhq6HJGZZDs2I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\SetAvailabilityAlumni.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\SetAvailabilityStudentOrg.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/SetAvailabilityStudentOrg#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "79klu5qgy0",
+      "Integrity": "NfTcBCnaS0XVHBeWxthl5/WvdmeoxPvw72Kvf0IESJw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\SetAvailabilityStudentOrg.css"
     },
     {
       "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\site.css",
@@ -269,6 +521,27 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\StudentOrgAppointments.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/StudentOrgAppointments#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rt3yh5rs67",
+      "Integrity": "ISPnjM3wI4vyF7ciJJFiUNtDFIwkXVPh69xk/GoS0hI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\StudentOrgAppointments.css"
+    },
+    {
       "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\studentRegistration.css",
       "SourceId": "WebBookingApp",
       "SourceType": "Discovered",
@@ -283,11 +556,53 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "plyj2qii7e",
-      "Integrity": "7b/Ey6Sf2Yt5PI9Io1SDcZ+fjDOmrqXVkchcwUFYhec=",
+      "Fingerprint": "3x438w95sb",
+      "Integrity": "p5PKGNanCRhjpd/Ie4EJcvR8HDsi0CmDMd0vpewXAR4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\studentRegistration.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\StudentSettings.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/StudentSettings#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kf17iyqr2l",
+      "Integrity": "AH3KUL8+/DFJiKezcyMXKmnxWmyDrqmo1GZ9JUK8CZI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\StudentSettings.css"
+    },
+    {
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\viewEmployee.css",
+      "SourceId": "WebBookingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
+      "BasePath": "_content/WebBookingApp",
+      "RelativePath": "css/viewEmployee#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xdvhwlkm80",
+      "Integrity": "2/KQ7hwYMwPzPfdwVirVvB8Sr/L0lsz/PZGXDq9ONh4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\viewEmployee.css"
     },
     {
       "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\favicon.ico",
@@ -311,12 +626,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\6262461230291732936.jpg",
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\6285310516435992971.jpg",
       "SourceId": "WebBookingApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
       "BasePath": "_content/WebBookingApp",
-      "RelativePath": "images/6262461230291732936#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/6285310516435992971#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -325,19 +640,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jefatxeans",
-      "Integrity": "hdL5NeNP4U/4mHIQW1Rbr0Z0Bm0kR+RzAHXaeUT6rkc=",
+      "Fingerprint": "d04a94og6d",
+      "Integrity": "MxQwH610PliY8UC6iNl9TYAdikDRTNqMSwGVg9PEO+s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\6262461230291732936.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\6285310516435992971.jpg"
     },
     {
-      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\bg-1536x864.png",
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\banner.jpg",
       "SourceId": "WebBookingApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
       "BasePath": "_content/WebBookingApp",
-      "RelativePath": "images/bg-1536x864#[.{fingerprint}]?.png",
+      "RelativePath": "images/banner#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -346,32 +661,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "x16cm7h38a",
-      "Integrity": "pcvhXhPgSiFnO5g88YEe3sJbTf2Semw9jhxlBYbndbY=",
+      "Fingerprint": "j3gty08fgd",
+      "Integrity": "QWcBytjAHA73yl5CPh6S1U59XHrOGx0YL9LWPzSN3xI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\bg-1536x864.png"
-    },
-    {
-      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\cict.jpg",
-      "SourceId": "WebBookingApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
-      "BasePath": "_content/WebBookingApp",
-      "RelativePath": "images/cict#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "o359zrwfxb",
-      "Integrity": "7G5kinp13Sfu2UPCKN42J/2iLoqykZDWwB1Cz57Mz/0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cict.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\banner.jpg"
     },
     {
       "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\image.png",
@@ -395,12 +689,12 @@
       "OriginalItemSpec": "wwwroot\\images\\image.png"
     },
     {
-      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\tcu.jpg",
+      "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\Login Page.png",
       "SourceId": "WebBookingApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\",
       "BasePath": "_content/WebBookingApp",
-      "RelativePath": "images/tcu#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/Login Page#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -409,11 +703,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ibyp4xi9ja",
-      "Integrity": "/oHicO1S9AIN2gVKb+919h0dpi2SZSZU6i58+/QcfJU=",
+      "Fingerprint": "d0pspq4lm0",
+      "Integrity": "Y7GI6/KnCf6s2Ck6BvwpcGpFkZwZfCqkOdBLBKmpF1s=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tcu.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\Login Page.png"
     },
     {
       "Identity": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\js\\dashboardAdmin.js",
@@ -1720,6 +2014,379 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/addEmployee.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\addEmployee.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10046"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XJ2qW5d9XW74U81yiaPRyaEjq/Kqt3owgIE7bXC24XI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 17:08:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XJ2qW5d9XW74U81yiaPRyaEjq/Kqt3owgIE7bXC24XI="
+        }
+      ]
+    },
+    {
+      "Route": "css/addEmployee.cy5edogv8z.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\addEmployee.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10046"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XJ2qW5d9XW74U81yiaPRyaEjq/Kqt3owgIE7bXC24XI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 17:08:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cy5edogv8z"
+        },
+        {
+          "Name": "label",
+          "Value": "css/addEmployee.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XJ2qW5d9XW74U81yiaPRyaEjq/Kqt3owgIE7bXC24XI="
+        }
+      ]
+    },
+    {
+      "Route": "css/AlumniAppointments.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AlumniAppointments.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7833"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0fgPbjzYbUZwD2PvFhvTTAgRIPUbVJIx4FZ2LcNfcPY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 16:38:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0fgPbjzYbUZwD2PvFhvTTAgRIPUbVJIx4FZ2LcNfcPY="
+        }
+      ]
+    },
+    {
+      "Route": "css/AlumniAppointments.lb731wxy6p.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AlumniAppointments.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7833"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0fgPbjzYbUZwD2PvFhvTTAgRIPUbVJIx4FZ2LcNfcPY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 16:38:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lb731wxy6p"
+        },
+        {
+          "Name": "label",
+          "Value": "css/AlumniAppointments.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0fgPbjzYbUZwD2PvFhvTTAgRIPUbVJIx4FZ2LcNfcPY="
+        }
+      ]
+    },
+    {
+      "Route": "css/AlumniSettings.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AlumniSettings.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8296"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBPvAa4BjommEKTHBSP2MoalHQbdXLJyn1r/divUEqw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:48:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBPvAa4BjommEKTHBSP2MoalHQbdXLJyn1r/divUEqw="
+        }
+      ]
+    },
+    {
+      "Route": "css/AlumniSettings.w4dgu2exe2.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AlumniSettings.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8296"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBPvAa4BjommEKTHBSP2MoalHQbdXLJyn1r/divUEqw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:48:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w4dgu2exe2"
+        },
+        {
+          "Name": "label",
+          "Value": "css/AlumniSettings.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBPvAa4BjommEKTHBSP2MoalHQbdXLJyn1r/divUEqw="
+        }
+      ]
+    },
+    {
+      "Route": "css/AppointmentList.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AppointmentList.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7595"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2cq3NCiGTDoLUKocGO+/bOITbrXUrebb0s24E8X7Rns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 19 Apr 2025 13:54:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2cq3NCiGTDoLUKocGO+/bOITbrXUrebb0s24E8X7Rns="
+        }
+      ]
+    },
+    {
+      "Route": "css/AppointmentList.p4vxnat0v9.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\AppointmentList.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7595"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2cq3NCiGTDoLUKocGO+/bOITbrXUrebb0s24E8X7Rns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 19 Apr 2025 13:54:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p4vxnat0v9"
+        },
+        {
+          "Name": "label",
+          "Value": "css/AppointmentList.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2cq3NCiGTDoLUKocGO+/bOITbrXUrebb0s24E8X7Rns="
+        }
+      ]
+    },
+    {
+      "Route": "css/BookedAppointments.94aftpgvsm.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\BookedAppointments.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11117"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+eHar9wWswFncEpHwgAZ2hTj55HJ66BoAYSAVdCadlM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:42:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "94aftpgvsm"
+        },
+        {
+          "Name": "label",
+          "Value": "css/BookedAppointments.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+eHar9wWswFncEpHwgAZ2hTj55HJ66BoAYSAVdCadlM="
+        }
+      ]
+    },
+    {
       "Route": "css/BookedAppointments.css",
       "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\BookedAppointments.css",
       "Selectors": [],
@@ -1730,7 +2397,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7718"
+          "Value": "11117"
         },
         {
           "Name": "Content-Type",
@@ -1738,11 +2405,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"phrAAHwEz6yEjYqR1GZnjC2ZMag1FVYKwPYz7XOwvzM=\""
+          "Value": "\"+eHar9wWswFncEpHwgAZ2hTj55HJ66BoAYSAVdCadlM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:26:25 GMT"
+          "Value": "Wed, 07 May 2025 05:42:01 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1752,52 +2419,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-phrAAHwEz6yEjYqR1GZnjC2ZMag1FVYKwPYz7XOwvzM="
-        }
-      ]
-    },
-    {
-      "Route": "css/BookedAppointments.m94rz17ifi.css",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\BookedAppointments.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7718"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"phrAAHwEz6yEjYqR1GZnjC2ZMag1FVYKwPYz7XOwvzM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:26:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "m94rz17ifi"
-        },
-        {
-          "Name": "label",
-          "Value": "css/BookedAppointments.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-phrAAHwEz6yEjYqR1GZnjC2ZMag1FVYKwPYz7XOwvzM="
+          "Value": "sha256-+eHar9wWswFncEpHwgAZ2hTj55HJ66BoAYSAVdCadlM="
         }
       ]
     },
@@ -1812,7 +2434,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5320"
+          "Value": "10620"
         },
         {
           "Name": "Content-Type",
@@ -1820,11 +2442,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OCQotZlUPryAMcueSpMYrNyyiN3g3pKFdera3jtfkRQ=\""
+          "Value": "\"UFnGdeF54u3beKwx3Fja1z+vYPlbNBJvRsFr4uQpAUI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:27:42 GMT"
+          "Value": "Wed, 07 May 2025 13:58:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1834,12 +2456,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-OCQotZlUPryAMcueSpMYrNyyiN3g3pKFdera3jtfkRQ="
+          "Value": "sha256-UFnGdeF54u3beKwx3Fja1z+vYPlbNBJvRsFr4uQpAUI="
         }
       ]
     },
     {
-      "Route": "css/dashboardAdmin.cv2hvt65fv.css",
+      "Route": "css/dashboardAdmin.gcrxmigxz1.css",
       "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\dashboardAdmin.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1849,7 +2471,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5320"
+          "Value": "10620"
         },
         {
           "Name": "Content-Type",
@@ -1857,11 +2479,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OCQotZlUPryAMcueSpMYrNyyiN3g3pKFdera3jtfkRQ=\""
+          "Value": "\"UFnGdeF54u3beKwx3Fja1z+vYPlbNBJvRsFr4uQpAUI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:27:42 GMT"
+          "Value": "Wed, 07 May 2025 13:58:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1871,7 +2493,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "cv2hvt65fv"
+          "Value": "gcrxmigxz1"
         },
         {
           "Name": "label",
@@ -1879,7 +2501,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-OCQotZlUPryAMcueSpMYrNyyiN3g3pKFdera3jtfkRQ="
+          "Value": "sha256-UFnGdeF54u3beKwx3Fja1z+vYPlbNBJvRsFr4uQpAUI="
         }
       ]
     },
@@ -1894,7 +2516,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6633"
+          "Value": "8221"
         },
         {
           "Name": "Content-Type",
@@ -1902,11 +2524,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"N3d3yIl5gAlK5Qx3DZOwwaPBahjvschFU47xquvEeqE=\""
+          "Value": "\"WVClWUoSpJN5iYSX/0nha+2lGk9cLnl0dZxoQsd3zEA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:28:06 GMT"
+          "Value": "Tue, 06 May 2025 16:05:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1916,12 +2538,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-N3d3yIl5gAlK5Qx3DZOwwaPBahjvschFU47xquvEeqE="
+          "Value": "sha256-WVClWUoSpJN5iYSX/0nha+2lGk9cLnl0dZxoQsd3zEA="
         }
       ]
     },
     {
-      "Route": "css/dashboardProfessor.nkhlfva9r3.css",
+      "Route": "css/dashboardProfessor.tz5gy7jnux.css",
       "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\dashboardProfessor.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1931,7 +2553,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6633"
+          "Value": "8221"
         },
         {
           "Name": "Content-Type",
@@ -1939,11 +2561,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"N3d3yIl5gAlK5Qx3DZOwwaPBahjvschFU47xquvEeqE=\""
+          "Value": "\"WVClWUoSpJN5iYSX/0nha+2lGk9cLnl0dZxoQsd3zEA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:28:06 GMT"
+          "Value": "Tue, 06 May 2025 16:05:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1953,7 +2575,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "nkhlfva9r3"
+          "Value": "tz5gy7jnux"
         },
         {
           "Name": "label",
@@ -1961,12 +2583,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-N3d3yIl5gAlK5Qx3DZOwwaPBahjvschFU47xquvEeqE="
+          "Value": "sha256-WVClWUoSpJN5iYSX/0nha+2lGk9cLnl0dZxoQsd3zEA="
         }
       ]
     },
     {
-      "Route": "css/dashboardStudent.7f1a4ip8lp.css",
+      "Route": "css/dashboardStudent.5g9wvjtw05.css",
       "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\dashboardStudent.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1976,7 +2598,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10177"
+          "Value": "11456"
         },
         {
           "Name": "Content-Type",
@@ -1984,11 +2606,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TT7f3ghuR1Ohh+Y0HRp6esqhWaNpAt0kbguqnTzFHmY=\""
+          "Value": "\"K42jPBrqlvfDo16ugb5qxjZFZZc7+9zVdE9YcNdJqoA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:25:57 GMT"
+          "Value": "Wed, 07 May 2025 05:45:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1998,7 +2620,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "7f1a4ip8lp"
+          "Value": "5g9wvjtw05"
         },
         {
           "Name": "label",
@@ -2006,7 +2628,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-TT7f3ghuR1Ohh+Y0HRp6esqhWaNpAt0kbguqnTzFHmY="
+          "Value": "sha256-K42jPBrqlvfDo16ugb5qxjZFZZc7+9zVdE9YcNdJqoA="
         }
       ]
     },
@@ -2021,7 +2643,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "10177"
+          "Value": "11456"
         },
         {
           "Name": "Content-Type",
@@ -2029,11 +2651,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"TT7f3ghuR1Ohh+Y0HRp6esqhWaNpAt0kbguqnTzFHmY=\""
+          "Value": "\"K42jPBrqlvfDo16ugb5qxjZFZZc7+9zVdE9YcNdJqoA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:25:57 GMT"
+          "Value": "Wed, 07 May 2025 05:45:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2043,7 +2665,335 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-TT7f3ghuR1Ohh+Y0HRp6esqhWaNpAt0kbguqnTzFHmY="
+          "Value": "sha256-K42jPBrqlvfDo16ugb5qxjZFZZc7+9zVdE9YcNdJqoA="
+        }
+      ]
+    },
+    {
+      "Route": "css/EditAlumniProfile.4y4kviickl.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\EditAlumniProfile.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7009"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DH3Kyw4O6dBGtbTvnafvGfZoUjW9Z88UqBAAagmoa7A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 09:03:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4y4kviickl"
+        },
+        {
+          "Name": "label",
+          "Value": "css/EditAlumniProfile.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DH3Kyw4O6dBGtbTvnafvGfZoUjW9Z88UqBAAagmoa7A="
+        }
+      ]
+    },
+    {
+      "Route": "css/EditAlumniProfile.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\EditAlumniProfile.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7009"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DH3Kyw4O6dBGtbTvnafvGfZoUjW9Z88UqBAAagmoa7A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 09:03:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DH3Kyw4O6dBGtbTvnafvGfZoUjW9Z88UqBAAagmoa7A="
+        }
+      ]
+    },
+    {
+      "Route": "css/editEmployee.0z3wlyyw53.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\editEmployee.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9616"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5AYsfnLLoS6ZqmJCcHPqISiDZIfUFzbaLfUXqavicLY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:10:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0z3wlyyw53"
+        },
+        {
+          "Name": "label",
+          "Value": "css/editEmployee.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5AYsfnLLoS6ZqmJCcHPqISiDZIfUFzbaLfUXqavicLY="
+        }
+      ]
+    },
+    {
+      "Route": "css/editEmployee.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\editEmployee.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9616"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5AYsfnLLoS6ZqmJCcHPqISiDZIfUFzbaLfUXqavicLY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:10:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5AYsfnLLoS6ZqmJCcHPqISiDZIfUFzbaLfUXqavicLY="
+        }
+      ]
+    },
+    {
+      "Route": "css/editStudentProfile.6gsoae02xg.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\editStudentProfile.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7498"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+pfbx42WTiGp/bOjT2x7CnOdtFrILDjbhbeZOjDf2Ko=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:09:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6gsoae02xg"
+        },
+        {
+          "Name": "label",
+          "Value": "css/editStudentProfile.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+pfbx42WTiGp/bOjT2x7CnOdtFrILDjbhbeZOjDf2Ko="
+        }
+      ]
+    },
+    {
+      "Route": "css/editStudentProfile.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\editStudentProfile.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7498"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+pfbx42WTiGp/bOjT2x7CnOdtFrILDjbhbeZOjDf2Ko=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:09:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+pfbx42WTiGp/bOjT2x7CnOdtFrILDjbhbeZOjDf2Ko="
+        }
+      ]
+    },
+    {
+      "Route": "css/InstructorSettings.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\InstructorSettings.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9594"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RUcuu95s23iSwyf4H25WkWRjXUhyGr4hhtdWXG2/qBQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 15:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RUcuu95s23iSwyf4H25WkWRjXUhyGr4hhtdWXG2/qBQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/InstructorSettings.vrd0rq5y1y.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\InstructorSettings.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9594"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RUcuu95s23iSwyf4H25WkWRjXUhyGr4hhtdWXG2/qBQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 15:56:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vrd0rq5y1y"
+        },
+        {
+          "Name": "label",
+          "Value": "css/InstructorSettings.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RUcuu95s23iSwyf4H25WkWRjXUhyGr4hhtdWXG2/qBQ="
         }
       ]
     },
@@ -2058,7 +3008,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1421"
+          "Value": "1959"
         },
         {
           "Name": "Content-Type",
@@ -2066,11 +3016,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZoBENcU9pG0wiYU4g++SBPfQVkGc1q2UlCOyKvQrSHU=\""
+          "Value": "\"LwSWT5TgtZ7hZy29tnBQVS0k8/1d/rzQediFnUIBsIA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 14:52:24 GMT"
+          "Value": "Thu, 24 Apr 2025 09:04:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2080,12 +3030,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZoBENcU9pG0wiYU4g++SBPfQVkGc1q2UlCOyKvQrSHU="
+          "Value": "sha256-LwSWT5TgtZ7hZy29tnBQVS0k8/1d/rzQediFnUIBsIA="
         }
       ]
     },
     {
-      "Route": "css/login.ihn2ptxlxk.css",
+      "Route": "css/login.l3h1rl84k4.css",
       "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\login.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2095,7 +3045,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1421"
+          "Value": "1959"
         },
         {
           "Name": "Content-Type",
@@ -2103,11 +3053,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZoBENcU9pG0wiYU4g++SBPfQVkGc1q2UlCOyKvQrSHU=\""
+          "Value": "\"LwSWT5TgtZ7hZy29tnBQVS0k8/1d/rzQediFnUIBsIA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 14:52:24 GMT"
+          "Value": "Thu, 24 Apr 2025 09:04:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2117,7 +3067,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ihn2ptxlxk"
+          "Value": "l3h1rl84k4"
         },
         {
           "Name": "label",
@@ -2125,7 +3075,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZoBENcU9pG0wiYU4g++SBPfQVkGc1q2UlCOyKvQrSHU="
+          "Value": "sha256-LwSWT5TgtZ7hZy29tnBQVS0k8/1d/rzQediFnUIBsIA="
         }
       ]
     },
@@ -2140,7 +3090,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9566"
+          "Value": "14722"
         },
         {
           "Name": "Content-Type",
@@ -2148,11 +3098,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"SOp9e+mW9jYTqcKSGh60jfakcCo1Mn7OQSxnbP+Wvrc=\""
+          "Value": "\"hkYJtwCT3rlqwuEc/+bieHla0Idf5WYOpWw/ocq//AU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:25:39 GMT"
+          "Value": "Tue, 06 May 2025 23:21:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2162,12 +3112,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-SOp9e+mW9jYTqcKSGh60jfakcCo1Mn7OQSxnbP+Wvrc="
+          "Value": "sha256-hkYJtwCT3rlqwuEc/+bieHla0Idf5WYOpWw/ocq//AU="
         }
       ]
     },
     {
-      "Route": "css/makeAppointment.klcev5kben.css",
+      "Route": "css/makeAppointment.il4d6y25vi.css",
       "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\makeAppointment.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2177,7 +3127,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9566"
+          "Value": "14722"
         },
         {
           "Name": "Content-Type",
@@ -2185,11 +3135,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"SOp9e+mW9jYTqcKSGh60jfakcCo1Mn7OQSxnbP+Wvrc=\""
+          "Value": "\"hkYJtwCT3rlqwuEc/+bieHla0Idf5WYOpWw/ocq//AU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:25:39 GMT"
+          "Value": "Tue, 06 May 2025 23:21:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2199,7 +3149,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "klcev5kben"
+          "Value": "il4d6y25vi"
         },
         {
           "Name": "label",
@@ -2207,7 +3157,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-SOp9e+mW9jYTqcKSGh60jfakcCo1Mn7OQSxnbP+Wvrc="
+          "Value": "sha256-hkYJtwCT3rlqwuEc/+bieHla0Idf5WYOpWw/ocq//AU="
         }
       ]
     },
@@ -2222,7 +3172,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5320"
+          "Value": "13318"
         },
         {
           "Name": "Content-Type",
@@ -2230,11 +3180,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tpFdO4Lk4KmoZOqE4JDtgzw6pDJ4fd7eOnwd82oyXYE=\""
+          "Value": "\"tuK0BDvBZZVsaIOMOwn2uGl602emO+SlccEL9jvmGLw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 11:25:11 GMT"
+          "Value": "Wed, 07 May 2025 05:15:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2244,12 +3194,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tpFdO4Lk4KmoZOqE4JDtgzw6pDJ4fd7eOnwd82oyXYE="
+          "Value": "sha256-tuK0BDvBZZVsaIOMOwn2uGl602emO+SlccEL9jvmGLw="
         }
       ]
     },
     {
-      "Route": "css/manageAppointment.y6lkyhktd8.css",
+      "Route": "css/manageAppointment.q7qo4l58sh.css",
       "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageAppointment.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2259,7 +3209,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5320"
+          "Value": "13318"
         },
         {
           "Name": "Content-Type",
@@ -2267,11 +3217,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tpFdO4Lk4KmoZOqE4JDtgzw6pDJ4fd7eOnwd82oyXYE=\""
+          "Value": "\"tuK0BDvBZZVsaIOMOwn2uGl602emO+SlccEL9jvmGLw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 11:25:11 GMT"
+          "Value": "Wed, 07 May 2025 05:15:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2281,7 +3231,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "y6lkyhktd8"
+          "Value": "q7qo4l58sh"
         },
         {
           "Name": "label",
@@ -2289,7 +3239,89 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-tpFdO4Lk4KmoZOqE4JDtgzw6pDJ4fd7eOnwd82oyXYE="
+          "Value": "sha256-tuK0BDvBZZVsaIOMOwn2uGl602emO+SlccEL9jvmGLw="
+        }
+      ]
+    },
+    {
+      "Route": "css/manageRegistration.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageRegistration.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9394"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dB5paYQKBbbzLaC2ps//dWow2d9ElVH25PRNIsvlkmk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dB5paYQKBbbzLaC2ps//dWow2d9ElVH25PRNIsvlkmk="
+        }
+      ]
+    },
+    {
+      "Route": "css/manageRegistration.oprle9phyp.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageRegistration.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9394"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dB5paYQKBbbzLaC2ps//dWow2d9ElVH25PRNIsvlkmk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oprle9phyp"
+        },
+        {
+          "Name": "label",
+          "Value": "css/manageRegistration.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dB5paYQKBbbzLaC2ps//dWow2d9ElVH25PRNIsvlkmk="
         }
       ]
     },
@@ -2304,7 +3336,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7836"
+          "Value": "10789"
         },
         {
           "Name": "Content-Type",
@@ -2312,11 +3344,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uZ5uXxgZVBjnszA4U7+qnswJL891y2mSA5woKlPfDIU=\""
+          "Value": "\"R6kcIpWvd99d6qQJUWpXqVUnqq3+7JyocOGhX4at9Ic=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 13:25:46 GMT"
+          "Value": "Wed, 07 May 2025 14:02:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2326,12 +3358,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uZ5uXxgZVBjnszA4U7+qnswJL891y2mSA5woKlPfDIU="
+          "Value": "sha256-R6kcIpWvd99d6qQJUWpXqVUnqq3+7JyocOGhX4at9Ic="
         }
       ]
     },
     {
-      "Route": "css/manageStudents.vm9e9ko1g9.css",
+      "Route": "css/manageStudents.ncc77aiymg.css",
       "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\manageStudents.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2341,7 +3373,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7836"
+          "Value": "10789"
         },
         {
           "Name": "Content-Type",
@@ -2349,11 +3381,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uZ5uXxgZVBjnszA4U7+qnswJL891y2mSA5woKlPfDIU=\""
+          "Value": "\"R6kcIpWvd99d6qQJUWpXqVUnqq3+7JyocOGhX4at9Ic=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 13:25:46 GMT"
+          "Value": "Wed, 07 May 2025 14:02:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2363,7 +3395,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "vm9e9ko1g9"
+          "Value": "ncc77aiymg"
         },
         {
           "Name": "label",
@@ -2371,13 +3403,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-uZ5uXxgZVBjnszA4U7+qnswJL891y2mSA5woKlPfDIU="
+          "Value": "sha256-R6kcIpWvd99d6qQJUWpXqVUnqq3+7JyocOGhX4at9Ic="
         }
       ]
     },
     {
-      "Route": "css/setAvailability.5xqg06ppgx.css",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\setAvailability.css",
+      "Route": "css/OrgSettings.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\OrgSettings.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2386,7 +3418,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9721"
+          "Value": "8254"
         },
         {
           "Name": "Content-Type",
@@ -2394,11 +3426,48 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"t2ujxWMfBKugBtg4B3IG9Q73Zd6Z0d+tp8AEICpo3zQ=\""
+          "Value": "\"7+yxM95eFFHqkQkYoPUXs9zkBEbhja7yuSGqvNhmrik=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:28:47 GMT"
+          "Value": "Wed, 07 May 2025 08:31:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7+yxM95eFFHqkQkYoPUXs9zkBEbhja7yuSGqvNhmrik="
+        }
+      ]
+    },
+    {
+      "Route": "css/OrgSettings.ln8153q21m.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\OrgSettings.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8254"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7+yxM95eFFHqkQkYoPUXs9zkBEbhja7yuSGqvNhmrik=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 08:31:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2408,15 +3477,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5xqg06ppgx"
+          "Value": "ln8153q21m"
         },
         {
           "Name": "label",
-          "Value": "css/setAvailability.css"
+          "Value": "css/OrgSettings.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-t2ujxWMfBKugBtg4B3IG9Q73Zd6Z0d+tp8AEICpo3zQ="
+          "Value": "sha256-7+yxM95eFFHqkQkYoPUXs9zkBEbhja7yuSGqvNhmrik="
         }
       ]
     },
@@ -2431,7 +3500,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9721"
+          "Value": "9513"
         },
         {
           "Name": "Content-Type",
@@ -2439,11 +3508,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"t2ujxWMfBKugBtg4B3IG9Q73Zd6Z0d+tp8AEICpo3zQ=\""
+          "Value": "\"UjA9HBjLStWUWgKGLXC44qqbPGXakZ94B13OBikmLzI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 10:28:47 GMT"
+          "Value": "Tue, 06 May 2025 15:34:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2453,7 +3522,216 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-t2ujxWMfBKugBtg4B3IG9Q73Zd6Z0d+tp8AEICpo3zQ="
+          "Value": "sha256-UjA9HBjLStWUWgKGLXC44qqbPGXakZ94B13OBikmLzI="
+        }
+      ]
+    },
+    {
+      "Route": "css/setAvailability.eklerk2yle.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\setAvailability.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9513"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UjA9HBjLStWUWgKGLXC44qqbPGXakZ94B13OBikmLzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 15:34:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eklerk2yle"
+        },
+        {
+          "Name": "label",
+          "Value": "css/setAvailability.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UjA9HBjLStWUWgKGLXC44qqbPGXakZ94B13OBikmLzI="
+        }
+      ]
+    },
+    {
+      "Route": "css/SetAvailabilityAlumni.8yxysnxbgz.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\SetAvailabilityAlumni.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oPeqeGHZ4UPxqhL/BKyorkuWs6wcewdhq6HJGZZDs2I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:46:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8yxysnxbgz"
+        },
+        {
+          "Name": "label",
+          "Value": "css/SetAvailabilityAlumni.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oPeqeGHZ4UPxqhL/BKyorkuWs6wcewdhq6HJGZZDs2I="
+        }
+      ]
+    },
+    {
+      "Route": "css/SetAvailabilityAlumni.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\SetAvailabilityAlumni.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oPeqeGHZ4UPxqhL/BKyorkuWs6wcewdhq6HJGZZDs2I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:46:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oPeqeGHZ4UPxqhL/BKyorkuWs6wcewdhq6HJGZZDs2I="
+        }
+      ]
+    },
+    {
+      "Route": "css/SetAvailabilityStudentOrg.79klu5qgy0.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\SetAvailabilityStudentOrg.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10035"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NfTcBCnaS0XVHBeWxthl5/WvdmeoxPvw72Kvf0IESJw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:49:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "79klu5qgy0"
+        },
+        {
+          "Name": "label",
+          "Value": "css/SetAvailabilityStudentOrg.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NfTcBCnaS0XVHBeWxthl5/WvdmeoxPvw72Kvf0IESJw="
+        }
+      ]
+    },
+    {
+      "Route": "css/SetAvailabilityStudentOrg.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\SetAvailabilityStudentOrg.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10035"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NfTcBCnaS0XVHBeWxthl5/WvdmeoxPvw72Kvf0IESJw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:49:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NfTcBCnaS0XVHBeWxthl5/WvdmeoxPvw72Kvf0IESJw="
         }
       ]
     },
@@ -2540,6 +3818,133 @@
       ]
     },
     {
+      "Route": "css/StudentOrgAppointments.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\StudentOrgAppointments.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12762"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ISPnjM3wI4vyF7ciJJFiUNtDFIwkXVPh69xk/GoS0hI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 16:18:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ISPnjM3wI4vyF7ciJJFiUNtDFIwkXVPh69xk/GoS0hI="
+        }
+      ]
+    },
+    {
+      "Route": "css/StudentOrgAppointments.rt3yh5rs67.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\StudentOrgAppointments.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12762"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ISPnjM3wI4vyF7ciJJFiUNtDFIwkXVPh69xk/GoS0hI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 16:18:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rt3yh5rs67"
+        },
+        {
+          "Name": "label",
+          "Value": "css/StudentOrgAppointments.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ISPnjM3wI4vyF7ciJJFiUNtDFIwkXVPh69xk/GoS0hI="
+        }
+      ]
+    },
+    {
+      "Route": "css/studentRegistration.3x438w95sb.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\studentRegistration.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p5PKGNanCRhjpd/Ie4EJcvR8HDsi0CmDMd0vpewXAR4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 05 May 2025 14:45:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3x438w95sb"
+        },
+        {
+          "Name": "label",
+          "Value": "css/studentRegistration.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-p5PKGNanCRhjpd/Ie4EJcvR8HDsi0CmDMd0vpewXAR4="
+        }
+      ]
+    },
+    {
       "Route": "css/studentRegistration.css",
       "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\studentRegistration.css",
       "Selectors": [],
@@ -2550,7 +3955,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4920"
+          "Value": "7466"
         },
         {
           "Name": "Content-Type",
@@ -2558,11 +3963,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7b/Ey6Sf2Yt5PI9Io1SDcZ+fjDOmrqXVkchcwUFYhec=\""
+          "Value": "\"p5PKGNanCRhjpd/Ie4EJcvR8HDsi0CmDMd0vpewXAR4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 15:19:17 GMT"
+          "Value": "Mon, 05 May 2025 14:45:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2572,13 +3977,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-7b/Ey6Sf2Yt5PI9Io1SDcZ+fjDOmrqXVkchcwUFYhec="
+          "Value": "sha256-p5PKGNanCRhjpd/Ie4EJcvR8HDsi0CmDMd0vpewXAR4="
         }
       ]
     },
     {
-      "Route": "css/studentRegistration.plyj2qii7e.css",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\studentRegistration.css",
+      "Route": "css/StudentSettings.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\StudentSettings.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2587,7 +3992,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4920"
+          "Value": "9309"
         },
         {
           "Name": "Content-Type",
@@ -2595,11 +4000,48 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7b/Ey6Sf2Yt5PI9Io1SDcZ+fjDOmrqXVkchcwUFYhec=\""
+          "Value": "\"AH3KUL8+/DFJiKezcyMXKmnxWmyDrqmo1GZ9JUK8CZI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Mar 2025 15:19:17 GMT"
+          "Value": "Wed, 07 May 2025 05:39:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AH3KUL8+/DFJiKezcyMXKmnxWmyDrqmo1GZ9JUK8CZI="
+        }
+      ]
+    },
+    {
+      "Route": "css/StudentSettings.kf17iyqr2l.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\StudentSettings.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9309"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AH3KUL8+/DFJiKezcyMXKmnxWmyDrqmo1GZ9JUK8CZI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 05:39:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2609,15 +4051,97 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "plyj2qii7e"
+          "Value": "kf17iyqr2l"
         },
         {
           "Name": "label",
-          "Value": "css/studentRegistration.css"
+          "Value": "css/StudentSettings.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-7b/Ey6Sf2Yt5PI9Io1SDcZ+fjDOmrqXVkchcwUFYhec="
+          "Value": "sha256-AH3KUL8+/DFJiKezcyMXKmnxWmyDrqmo1GZ9JUK8CZI="
+        }
+      ]
+    },
+    {
+      "Route": "css/viewEmployee.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\viewEmployee.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11620"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2/KQ7hwYMwPzPfdwVirVvB8Sr/L0lsz/PZGXDq9ONh4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 17:10:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2/KQ7hwYMwPzPfdwVirVvB8Sr/L0lsz/PZGXDq9ONh4="
+        }
+      ]
+    },
+    {
+      "Route": "css/viewEmployee.xdvhwlkm80.css",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\css\\viewEmployee.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11620"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2/KQ7hwYMwPzPfdwVirVvB8Sr/L0lsz/PZGXDq9ONh4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 06 May 2025 17:10:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xdvhwlkm80"
+        },
+        {
+          "Name": "label",
+          "Value": "css/viewEmployee.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2/KQ7hwYMwPzPfdwVirVvB8Sr/L0lsz/PZGXDq9ONh4="
         }
       ]
     },
@@ -2704,8 +4228,8 @@
       ]
     },
     {
-      "Route": "images/6262461230291732936.jefatxeans.jpg",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\6262461230291732936.jpg",
+      "Route": "images/6285310516435992971.d04a94og6d.jpg",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\6285310516435992971.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2714,7 +4238,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19753"
+          "Value": "71865"
         },
         {
           "Name": "Content-Type",
@@ -2722,11 +4246,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hdL5NeNP4U/4mHIQW1Rbr0Z0Bm0kR+RzAHXaeUT6rkc=\""
+          "Value": "\"MxQwH610PliY8UC6iNl9TYAdikDRTNqMSwGVg9PEO+s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:37:51 GMT"
+          "Value": "Sat, 29 Mar 2025 13:25:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2736,21 +4260,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jefatxeans"
+          "Value": "d04a94og6d"
         },
         {
           "Name": "label",
-          "Value": "images/6262461230291732936.jpg"
+          "Value": "images/6285310516435992971.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-hdL5NeNP4U/4mHIQW1Rbr0Z0Bm0kR+RzAHXaeUT6rkc="
+          "Value": "sha256-MxQwH610PliY8UC6iNl9TYAdikDRTNqMSwGVg9PEO+s="
         }
       ]
     },
     {
-      "Route": "images/6262461230291732936.jpg",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\6262461230291732936.jpg",
+      "Route": "images/6285310516435992971.jpg",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\6285310516435992971.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2759,7 +4283,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19753"
+          "Value": "71865"
         },
         {
           "Name": "Content-Type",
@@ -2767,11 +4291,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hdL5NeNP4U/4mHIQW1Rbr0Z0Bm0kR+RzAHXaeUT6rkc=\""
+          "Value": "\"MxQwH610PliY8UC6iNl9TYAdikDRTNqMSwGVg9PEO+s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 14:37:51 GMT"
+          "Value": "Sat, 29 Mar 2025 13:25:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2781,13 +4305,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-hdL5NeNP4U/4mHIQW1Rbr0Z0Bm0kR+RzAHXaeUT6rkc="
+          "Value": "sha256-MxQwH610PliY8UC6iNl9TYAdikDRTNqMSwGVg9PEO+s="
         }
       ]
     },
     {
-      "Route": "images/bg-1536x864.png",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\bg-1536x864.png",
+      "Route": "images/banner.j3gty08fgd.jpg",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\banner.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2796,56 +4320,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "532954"
+          "Value": "19459"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/png"
+          "Value": "image/jpeg"
         },
         {
           "Name": "ETag",
-          "Value": "\"pcvhXhPgSiFnO5g88YEe3sJbTf2Semw9jhxlBYbndbY=\""
+          "Value": "\"QWcBytjAHA73yl5CPh6S1U59XHrOGx0YL9LWPzSN3xI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 13:19:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-pcvhXhPgSiFnO5g88YEe3sJbTf2Semw9jhxlBYbndbY="
-        }
-      ]
-    },
-    {
-      "Route": "images/bg-1536x864.x16cm7h38a.png",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\bg-1536x864.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "532954"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pcvhXhPgSiFnO5g88YEe3sJbTf2Semw9jhxlBYbndbY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 13:19:18 GMT"
+          "Value": "Fri, 11 Apr 2025 13:02:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2855,21 +4342,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "x16cm7h38a"
+          "Value": "j3gty08fgd"
         },
         {
           "Name": "label",
-          "Value": "images/bg-1536x864.png"
+          "Value": "images/banner.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pcvhXhPgSiFnO5g88YEe3sJbTf2Semw9jhxlBYbndbY="
+          "Value": "sha256-QWcBytjAHA73yl5CPh6S1U59XHrOGx0YL9LWPzSN3xI="
         }
       ]
     },
     {
-      "Route": "images/cict.jpg",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\cict.jpg",
+      "Route": "images/banner.jpg",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\banner.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2878,7 +4365,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "152297"
+          "Value": "19459"
         },
         {
           "Name": "Content-Type",
@@ -2886,11 +4373,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7G5kinp13Sfu2UPCKN42J/2iLoqykZDWwB1Cz57Mz/0=\""
+          "Value": "\"QWcBytjAHA73yl5CPh6S1U59XHrOGx0YL9LWPzSN3xI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 04:04:12 GMT"
+          "Value": "Fri, 11 Apr 2025 13:02:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2900,52 +4387,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-7G5kinp13Sfu2UPCKN42J/2iLoqykZDWwB1Cz57Mz/0="
-        }
-      ]
-    },
-    {
-      "Route": "images/cict.o359zrwfxb.jpg",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\cict.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "152297"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7G5kinp13Sfu2UPCKN42J/2iLoqykZDWwB1Cz57Mz/0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 21 Mar 2025 04:04:12 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "o359zrwfxb"
-        },
-        {
-          "Name": "label",
-          "Value": "images/cict.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7G5kinp13Sfu2UPCKN42J/2iLoqykZDWwB1Cz57Mz/0="
+          "Value": "sha256-QWcBytjAHA73yl5CPh6S1U59XHrOGx0YL9LWPzSN3xI="
         }
       ]
     },
@@ -3032,8 +4474,8 @@
       ]
     },
     {
-      "Route": "images/tcu.ibyp4xi9ja.jpg",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\tcu.jpg",
+      "Route": "images/Login Page.d0pspq4lm0.png",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\Login Page.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3042,19 +4484,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "252468"
+          "Value": "262827"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/jpeg"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"/oHicO1S9AIN2gVKb+919h0dpi2SZSZU6i58+/QcfJU=\""
+          "Value": "\"Y7GI6/KnCf6s2Ck6BvwpcGpFkZwZfCqkOdBLBKmpF1s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 13:09:43 GMT"
+          "Value": "Fri, 04 Apr 2025 02:25:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3064,21 +4506,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ibyp4xi9ja"
+          "Value": "d0pspq4lm0"
         },
         {
           "Name": "label",
-          "Value": "images/tcu.jpg"
+          "Value": "images/Login Page.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/oHicO1S9AIN2gVKb+919h0dpi2SZSZU6i58+/QcfJU="
+          "Value": "sha256-Y7GI6/KnCf6s2Ck6BvwpcGpFkZwZfCqkOdBLBKmpF1s="
         }
       ]
     },
     {
-      "Route": "images/tcu.jpg",
-      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\tcu.jpg",
+      "Route": "images/Login Page.png",
+      "AssetFile": "C:\\Users\\WINDOWS 10\\source\\repos\\WebBookingApp\\WebBookingApp\\wwwroot\\images\\Login Page.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3087,19 +4529,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "252468"
+          "Value": "262827"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/jpeg"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"/oHicO1S9AIN2gVKb+919h0dpi2SZSZU6i58+/QcfJU=\""
+          "Value": "\"Y7GI6/KnCf6s2Ck6BvwpcGpFkZwZfCqkOdBLBKmpF1s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 13:09:43 GMT"
+          "Value": "Fri, 04 Apr 2025 02:25:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3109,7 +4551,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/oHicO1S9AIN2gVKb+919h0dpi2SZSZU6i58+/QcfJU="
+          "Value": "sha256-Y7GI6/KnCf6s2Ck6BvwpcGpFkZwZfCqkOdBLBKmpF1s="
         }
       ]
     },
@@ -8220,7 +9662,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Mar 2025 14:33:35 GMT"
+          "Value": "Fri, 02 May 2025 19:21:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8257,7 +9699,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Mar 2025 14:33:35 GMT"
+          "Value": "Fri, 02 May 2025 19:21:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8302,7 +9744,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Mar 2025 14:33:35 GMT"
+          "Value": "Fri, 02 May 2025 19:21:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8347,7 +9789,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 17 Mar 2025 14:33:35 GMT"
+          "Value": "Fri, 02 May 2025 19:21:51 GMT"
         },
         {
           "Name": "Cache-Control",

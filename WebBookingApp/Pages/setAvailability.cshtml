@@ -22,18 +22,17 @@
                  alt="Profile Picture"
                  onclick="openUploadModal()">
             <div class="profile-info">
-                <h3>@Model.FirstName @Model.LastName</h3>
-
+                <h2>@Model.FirstName @Model.LastName</h2>
+                <h3>@Model.Role</h3>
             </div>
         </div>
 
         <ul>
             <p class="menu-text">Menu</p>
-
-            <li><a asp-page="/dashboardProfessor"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a asp-page="/dashboardProfessor"><i class="fas fa-tachometer-alt"></i> Home</a></li>
             <li><a asp-page="/manageAppointment"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
-            <li><a asp-page=""><i class="fas fa-list-alt"></i> Appointment Lists</a></li>
             <li><a asp-page="/setAvailability"><i class="fas fa-clock"></i> Set Availability</a></li>
+            <li><a asp-page="/InstructorSettings"><i class="fas fa-cog"></i> Settings</a></li>
         </ul>
 
         <a href="#" class="logout" onclick="showLogoutModal()">
@@ -41,7 +40,7 @@
         </a>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- Inside your existing <form method="post" class="main-content"> -->
 
     <form method="post" class="main-content">
         <h1>Set Availability</h1>
@@ -53,23 +52,22 @@
             <option value="unavailable">Unavailable</option>
         </select>
 
-     
         <div class="time-section" style="display:none;">
             <label for="start_time">Start Time:</label>
             <input type="time" id="start_time" name="start_time">
 
             <label for="end_time">End Time:</label>
             <input type="time" id="end_time" name="end_time">
+
+            <label for="capacity">Max Capacity:</label>
+            <input type="number" id="capacity" name="capacity" min="1" value="1">
         </div>
 
-
-        <!-- ✅ Date input for Available -->
         <div class="available-date-section" style="display:none;">
             <label for="available_date">Available Date:</label>
             <input type="date" id="available_date" name="available_date">
         </div>
 
-        <!-- ✅ Date input for Unavailable -->
         <div class="date-section" style="display:none;">
             <label for="unavailable_date">Unavailable Date:</label>
             <input type="date" id="unavailable_date" name="unavailable_date">
@@ -78,6 +76,7 @@
         <button type="submit">Save</button>
     </form>
 
+    <!-- ✅ AVAILABILITY TABLE — Now shows capacity if applicable -->
     <div class="availability-container">
         <h3>Your Availability</h3>
 
@@ -87,6 +86,7 @@
                     <th>Status</th>
                     <th>Date</th>
                     <th>Time</th>
+                    <th>Capacity</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -102,14 +102,15 @@
                             {
                                 <td>@(string.IsNullOrEmpty(item.UnavailableDate) ? "N/A" : item.UnavailableDate)</td>
                                 <td>-</td>
+                                <td>-</td> <!-- Capacity column for unavailable -->
                             }
                             else
                             {
                                 <td>@(string.IsNullOrEmpty(item.AvailableDate) ? "N/A" : item.AvailableDate)</td>
                                 <td>@item.StartTime - @item.EndTime</td>
+                                <td>@item.Capacity</td> <!-- Show capacity -->
                             }
 
-                            <!-- Delete Icon -->
                             <td>
                                 <form method="post" asp-page-handler="DeleteAvailability">
                                     <input type="hidden" name="Status" value="@item.Status" />
@@ -123,6 +124,7 @@
                                 </form>
                             </td>
                         </tr>
+
                     }
                 }
                 else
@@ -134,6 +136,7 @@
             </tbody>
         </table>
     </div>
+
 
 
 

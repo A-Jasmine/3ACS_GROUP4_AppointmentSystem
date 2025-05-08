@@ -1,0 +1,533 @@
+﻿/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Layout */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #fbebfb; /* lightest background */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: #57105a; /* deep violet (main sidebar background) */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the image and text */
+    padding: 10px 20px; /* Ensures proper spacing */
+    justify-content: flex-start; /* Aligns content to the left */
+    width: 100%;
+}
+
+    /* Profile Image */
+    .profile img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid white;
+        cursor: pointer;
+    }
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+}
+
+    .profile-info h2 {
+        font-size: 14px;
+        margin: 0;
+        color: white;
+        white-space: nowrap;
+    }
+
+    .profile-info h3 {
+        font-size: 14px;
+        margin: 0;
+        color: #fbebfb;
+        font-weight: normal;
+    }
+
+/* Fixes alignment for "Menu" text */
+.menu-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 15px 0 5px 20px; /* Aligns to the left */
+}
+
+.profile button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+    .profile button:hover {
+        background-color: #2980b9;
+    }
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+    padding: 10px 0;
+}
+
+    .sidebar ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+        .sidebar ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+            .sidebar ul li a i {
+                margin-right: 12px;
+                font-size: 18px;
+            }
+
+            /* Hover & Active Effects */
+            .sidebar ul li a:hover, .sidebar ul li .active {
+                background: white;
+                color: #57105a; /* deep violet */
+                font-weight: 600;
+            }
+
+/* Logout Button - Fixed at the Bottom */
+.logout {
+    display: flex;
+    width: 100%;
+    background: #57105a; /* deep violet */
+    color: white;
+    text-align: left;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 20px;
+    text-decoration: none;
+    gap: 10px;
+}
+
+    .logout:hover {
+        background: white;
+        color: #57105a; /* deep violet */
+        font-weight: 600;
+    }
+
+.modal {
+    display: none; /* ✅ Ensures modal is hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+    .modal-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* spacing between the file input and the button */
+        width: 100%;
+    }
+
+        .modal-content form input[type="file"] {
+            width: 100%;
+            margin: 15px 0;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        .modal-content form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #57105a; /* deep violet */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: -20px;
+        }
+
+            .modal-content form button:hover {
+                background-color: #c71db6; /* vibrant magenta */
+            }
+
+.logout-btn, .cancel-btn {
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 48%;
+    transition: 0.2s ease;
+    margin-top: 20px;
+}
+
+.logout-btn {
+    background-color: #57105a; /* deep violet */
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ccc;
+    color: black;
+}
+
+.logout-btn:hover {
+    background-color: #c71db6; /* vibrant magenta */
+}
+
+.cancel-btn:hover {
+    background-color: #aaa;
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    margin-bottom: -2px; /* Add some space between the list items */
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ensures full width */
+}
+
+.dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+    display: none;
+    position: static; /* Prevent overflow, display as block */
+    background-color: #57105a; /* deep violet */
+    width: 100%; /* Ensures it stays within sidebar */
+    border-radius: 4px;
+    box-shadow: none; /* Remove shadow for sidebar */
+    margin-top: 0px;
+    padding-left: -20px; /* Indent dropdown items */
+}
+
+    /* Dropdown Item Styles */
+    .dropdown-content a {
+        color: #606060;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 5px;
+    }
+
+        /* Hover effect for dropdown links */
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
+        }
+
+    /* Show dropdown when class is active */
+    .dropdown-content.show {
+        display: block;
+    }
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Add space between the caret and the text */
+.fa-caret-down {
+    margin-left: 6px;
+}
+
+/* Additional Hover Effect for Dropdown Toggle */
+.dropdown-toggle:hover {
+    background-color: #c71db6; /* vibrant magenta */
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 260px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fbebfb; /* lightest background */
+}
+
+/* Table Styling */
+.employee-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+    .employee-table th,
+    .employee-table td {
+        padding: 18px;
+        text-align: left;
+        font-size: 15px;
+        color: #2d2d2d;
+        border-bottom: 1px solid #eee;
+    }
+
+    .employee-table th {
+        background-color: #c71db6; /* vibrant magenta */
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+    }
+
+    .employee-table tr:hover {
+        background-color: #debcde; /* soft row alternate */
+        cursor: pointer;
+    }
+
+/* Action Button Styling */
+.action-btn {
+    background-color: #c71db6; /* vibrant magenta */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(199, 29, 182, 0.3);
+}
+
+    .action-btn:hover {
+        background-color: #b21d9b; /* slightly darker vibrant magenta */
+        transform: translateY(-1px);
+    }
+
+/* Search Bar Styling */
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 12px;
+    background-color: white;
+    transition: box-shadow 0.3s ease;
+}
+
+    .search-wrapper:focus-within {
+        box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
+    }
+
+.search-icon {
+    font-size: 18px;
+    color: #888;
+}
+
+.search-input {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 250px;
+    transition: width 0.3s ease;
+    background: transparent;
+}
+
+    .search-input:focus {
+        width: 280px;
+    }
+
+/* Table Container */
+.table-container {
+    margin-top: 20px;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Dropdown Styling */
+select {
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+    select:focus {
+        border-color: #e63946;
+        outline: none;
+    }
+
+/* Edit Employee Form */
+.edit-employee-form {
+    display: block;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    max-width: 640px;
+    margin: 40px auto;
+}
+
+/* Headings */
+.edit-employee-form__heading {
+    font-size: 26px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* Form Sections */
+.form-section__label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.form-section__input,
+.form-section__select {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+    .form-section__input:focus,
+    .form-section__select:focus {
+        border-color: #e63946;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.1);
+        outline: none;
+    }
+
+/* Button */
+.button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button--primary:hover {
+    background-color: #c1272d;
+    transform: translateY(-1px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .edit-employee-form {
+        padding: 16px;
+    }
+
+    .form-section__label,
+    .form-section__input,
+    .form-section__select,
+    .button--primary {
+        font-size: 14px;
+    }
+
+    .search-input {
+        width: 200px;
+    }
+
+        .search-input:focus {
+            width: 240px;
+        }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 200px;
+    }
+}

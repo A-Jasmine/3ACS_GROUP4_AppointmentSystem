@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\WINDOWS 10\OneDrive\Desktop\BookingApp</_PublishTargetUrl>
+    <History>True|2025-05-02T18:54:10.3369055Z||;True|2025-05-03T02:53:38.3697106+08:00||;True|2025-05-03T02:50:37.2978060+08:00||;True|2025-05-03T02:42:32.8878380+08:00||;True|2025-05-03T02:41:42.3964797+08:00||;True|2025-05-03T02:28:30.4387380+08:00||;True|2025-05-03T02:23:20.3489610+08:00||;True|2025-05-03T02:16:32.2530505+08:00||;True|2025-05-03T02:11:53.4002478+08:00||;True|2025-05-03T01:56:10.8795394+08:00||;True|2025-05-03T01:31:41.9238169+08:00||;True|2025-05-03T01:14:11.0015032+08:00||;True|2025-05-03T00:47:48.8097264+08:00||;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="web.config">
+      <publishTime>05/03/2025 01:13:26</publishTime>
+    </File>
+  </ItemGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=3ACS_GR4.mssql.somee.com%3bDatabase=3ACS_GR4%3bUser Id=AltheaJaz_SQLLogin_1%3bPassword=2d1udnv5tv%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

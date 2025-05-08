@@ -14,16 +14,20 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
+        <h3>CICT Appointment Booking System</h3>
         <form method="post">
-            <!-- Change input type from 'email' to 'text' -->
+ 
+            <label for="email">Email</label>
             <input type="text" name="Email" placeholder="Email" required>
 
-            <div class="password-container">
-                <input type="password" id="password" name="Password" placeholder="Password" required>
-                <span id="togglePassword" class="toggle-icon">
-                    <i id="eyeIcon" class="fas fa-eye"></i>
-                </span>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="Password" placeholder="Password" required>
+                    <span id="togglePassword" class="toggle-icon">
+                        <i id="eyeIcon" class="fas fa-eye"></i>
+                    </span>
+                </div>
             </div>
 
             <button type="submit">Login</button>

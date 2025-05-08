@@ -13,44 +13,71 @@ namespace WebBookingApp.Pages
     public class dashboardAdminModel : PageModel
     {
         private readonly ILogger<dashboardAdminModel> _logger;
-        private readonly string connString = "Server=MELON\\SQL2022;Database=BOOKING_DB;Trusted_Connection=True;";
+        private readonly string _connString;
 
-        public string FirstName { get; private set; } = ""; // Display username as FirstName
+        public dashboardAdminModel(ILogger<dashboardAdminModel> logger, IConfiguration configuration)
+        {
+            _logger = logger;
+            _connString = configuration.GetConnectionString("DefaultConnection");
+
+            if (string.IsNullOrEmpty(_connString))
+            {
+                _logger.LogError("The connection string 'DefaultConnection' is missing in the configuration.");
+                throw new InvalidOperationException("The ConnectionString property has not been initialized.");
+            }
+        }
+
+
+        // Properties to hold user details and profile picture
+        public string FirstName { get; private set; } = "";
         public byte[]? ProfilePicture { get; private set; }
-
         [BindProperty] public IFormFile? UploadedFile { get; set; }
         public string Message { get; private set; } = "";
 
-        public dashboardAdminModel(ILogger<dashboardAdminModel> logger) => _logger = logger;
+        // Employee, Student, and Alumni Statistics
+        public int TotalEmployees { get; set; }
+        public int TotalStudents { get; set; }
+        public int TotalAlumni { get; set; }
+        public int TotalPendingRegistrations { get; set; }
+        public int UpcomingAppointments { get; set; }
 
-        public void OnGet()
+        public class StudentOrganization
+        {
+            public string OrganizationName { get; set; } = string.Empty;
+            public int MemberCount { get; set; }
+        }
+
+        public List<StudentOrganization> StudentOrganizationData { get; set; } = new List<StudentOrganization>();
+
+  
+
+        public async Task OnGetAsync()
         {
             _logger.LogInformation("OnGet() started");
 
             string userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
 
-            // If the user is admin, use "admin" as the identifier (not email)
             if (string.IsNullOrEmpty(userEmail) || User.IsInRole("Admin"))
             {
                 userEmail = "admin"; // Admin doesn't have a traditional email, so use "admin"
             }
 
-            using SqlConnection conn = new(connString);
-            conn.Open();
+            using SqlConnection conn = new(_connString);
+            await conn.OpenAsync();
 
-            // 🔹 Retrieve username for admin (from userAdmin table)
+            // Fetching admin username for display
             string query = @"
-        SELECT username 
-        FROM dbo.userAdmin 
-        WHERE username = @Username"; // Assuming 'username' is the unique field for admins
+                SELECT username 
+                FROM dbo.userAdmin 
+                WHERE username = @Username";
 
             using (SqlCommand cmd = new(query, conn))
             {
-                cmd.Parameters.AddWithValue("@Username", userEmail); // Use username, not email
-                using SqlDataReader reader = cmd.ExecuteReader();
+                cmd.Parameters.AddWithValue("@Username", userEmail);
+                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
                 if (reader.Read())
                 {
-                    FirstName = reader["username"].ToString();  // Displaying username
+                    FirstName = reader["username"].ToString();
                     _logger.LogInformation($"Retrieved Username: {FirstName}");
                 }
                 else
@@ -59,12 +86,12 @@ namespace WebBookingApp.Pages
                 }
             }
 
-            // 🔹 Retrieve profile picture for admin from userPictures table
+            // Fetching profile picture
             query = "SELECT Picture FROM dbo.userPictures WHERE email = @Email";
             using (SqlCommand cmd = new(query, conn))
             {
-                cmd.Parameters.AddWithValue("@Email", userEmail); // Use email field for non-admin users
-                using SqlDataReader reader = cmd.ExecuteReader();
+                cmd.Parameters.AddWithValue("@Email", userEmail);
+                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
                 if (reader.Read() && reader["Picture"] != DBNull.Value)
                 {
                     ProfilePicture = (byte[])reader["Picture"];
@@ -75,6 +102,94 @@ namespace WebBookingApp.Pages
                     _logger.LogWarning("No profile picture found.");
                 }
             }
+
+            // Employee Statistics Query
+            string employeeQuery = @"
+                SELECT COUNT(*) FROM dbo.userCICT;";
+
+            using (SqlCommand cmd = new SqlCommand(employeeQuery, conn))
+            {
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    if (await reader.ReadAsync()) TotalEmployees = reader.GetInt32(0);
+                }
+            }
+
+            // Student Statistics Query
+            string studentQuery = @"
+                SELECT COUNT(*) FROM dbo.userStudents;";
+            using (SqlCommand cmd = new SqlCommand(studentQuery, conn))
+            {
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    if (await reader.ReadAsync()) TotalStudents = reader.GetInt32(0);
+                }
+            }
+
+            // Alumni Statistics Query
+            string alumniQuery = @"
+                SELECT COUNT(*) FROM dbo.userAlumni;";
+
+            using (SqlCommand cmd = new SqlCommand(alumniQuery, conn))
+            {
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    if (await reader.ReadAsync()) TotalAlumni = reader.GetInt32(0);
+                }
+            }
+
+            // Pending Registrations Query (from dbo.userVerification table)
+            string pendingQuery = @"
+                SELECT COUNT(*) FROM dbo.userVerification WHERE status = 'Pending';";
+
+            using (SqlCommand cmd = new SqlCommand(pendingQuery, conn))
+            {
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    if (await reader.ReadAsync()) TotalPendingRegistrations = reader.GetInt32(0);
+                }
+            }
+
+            // Fetching upcoming appointments (appointments scheduled for today or in the future)
+            string appointmentQuery = @"
+            SELECT COUNT(*) 
+            FROM dbo.Appointments 
+            WHERE appointment_date >= @TodayDate"; // Adjust the column name to match your table
+            using (SqlCommand cmd = new SqlCommand(appointmentQuery, conn))
+            {
+                cmd.Parameters.AddWithValue("@TodayDate", DateTime.Now.Date);
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    if (await reader.ReadAsync()) UpcomingAppointments = reader.GetInt32(0);
+                }
+            }
+
+            // Fetching the student organization data based on member counts from dbo.OrganizationMembers using a JOIN
+            string orgQuery = @"
+            SELECT o.OrganizationName, COUNT(m.OrganizationID) AS MemberCount
+            FROM dbo.OrganizationMembers m
+            INNER JOIN dbo.StudentOrganizations o ON m.OrganizationID = o.OrganizationID
+            GROUP BY o.OrganizationName
+            ORDER BY MemberCount DESC;";
+
+            using (SqlCommand cmd = new SqlCommand(orgQuery, conn))
+            {
+                using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                {
+                    StudentOrganizationData = new List<StudentOrganization>();
+                    while (await reader.ReadAsync())
+                    {
+                        var organization = new StudentOrganization
+                        {
+                            OrganizationName = reader["OrganizationName"].ToString(),
+                            MemberCount = reader.GetInt32(reader.GetOrdinal("MemberCount"))
+                        };
+                        StudentOrganizationData.Add(organization);
+                    }
+                }
+            }
+
+
         }
 
 
@@ -82,13 +197,12 @@ namespace WebBookingApp.Pages
         {
             string userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
 
-            // If the user is admin, use "admin" as email
             if (string.IsNullOrEmpty(userEmail) || User.IsInRole("Admin"))
             {
-                userEmail = "admin"; // Admin does not have a traditional email, so use "admin"
+                userEmail = "admin";
             }
 
-            using SqlConnection conn = new(connString);
+            using SqlConnection conn = new(_connString);
             conn.Open();
 
             byte[]? profileImage = null;
@@ -138,13 +252,12 @@ namespace WebBookingApp.Pages
 
                 string userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
 
-                // If the user is admin, use "admin" as email for storage
                 if (string.IsNullOrEmpty(userEmail) || User.IsInRole("Admin"))
                 {
-                    userEmail = "admin"; // Admin uses a static email 'admin' for profile picture
+                    userEmail = "admin";
                 }
 
-                using SqlConnection conn = new(connString);
+                using SqlConnection conn = new(_connString);
                 await conn.OpenAsync();
                 string query = @"
                 MERGE INTO dbo.userPictures AS target

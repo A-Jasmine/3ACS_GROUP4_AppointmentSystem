@@ -21,17 +21,21 @@
             <img id="profileImage" src="/dashboardProfessor?handler=ProfilePicture&t=@DateTime.UtcNow.Ticks"
                  alt="Profile Picture" width="50" height="100" onclick="openUploadModal()">
 
-            <h2>@Model.FirstName @Model.LastName</h2>
+            <div class="profile-info">
+                <h2>@Model.FirstName @Model.LastName</h2>
+                <h3>@Model.Role</h3>
+            </div>
         </div>
+
 
         <ul>
             <!-- ✅ Added "Menu" Text -->
             <p class="menu-text">Menu</p>
 
-            <li><a asp-page="/dashboardProfessor"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a asp-page="/dashboardProfessor"><i class="fas fa-tachometer-alt"></i> Home</a></li>
             <li><a asp-page="/manageAppointment"><i class="fas fa-calendar-alt"></i> Manage Appointments</a></li>
-            <li><a asp-page=""><i class="fas fa-list-alt"></i> Appointment Lists</a></li>
             <li><a asp-page="/setAvailability"><i class="fas fa-clock"></i> Set Availability</a></li>
+            <li><a asp-page="/InstructorSettings"><i class="fas fa-cog"></i> Settings</a></li>
         </ul>
 
 
@@ -41,8 +45,64 @@
     </div>
 
     <div class="main-content">
-        <h1>Welcome to the Professor Dashboard</h1>
+        <div class="profile-banner">
+            @if (Model.ProfilePicture != null)
+            {
+                <img src="@Url.Page("/dashboardStudent", "ProfilePicture")" alt="Profile Picture" />
+            }
+            else
+            {
+                <img src="/images/image.png" alt="Default Profile" />
+            }
+            <div class="student-name">
+                <h2>@Model.FirstName @Model.LastName</h2>
+                <h3>@Model.Role</h3>
+            </div>
+        </div>
+
+        <div class="appointment-history">
+            <h2>Recent Appointments</h2>
+            @if (Model.RecentAppointments.Any())
+            {
+                <table class="appointment-table">
+                    <thead>
+                        <tr>
+                            <th>Booker</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Purpose</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var appt in Model.RecentAppointments)
+                        {
+                            <tr>
+                                <td>@appt.BookerName</td>
+                                <td>@appt.BookerType</td>
+                                <td>@appt.FormattedDate</td>
+                                <td>@appt.FormattedTime</td>
+                                <td>@appt.Purpose</td>
+                                <td>
+                                    <span class="status status-@appt.Status.ToLower()">@appt.Status</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="view-all">
+                    <a asp-page="/manageAppointment">View All Appointments →</a>
+                </div>
+            }
+            else
+            {
+                <p>No recent appointments found.</p>
+            }
+        </div>
     </div>
+
+
 
 
     <div id="uploadModal" class="modal">
